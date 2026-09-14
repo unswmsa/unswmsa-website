@@ -3,6 +3,7 @@
 /* Variable colours for tailwind classes */
 @theme {
   --color-msa-black: #1a1a1a;
+  --font-inter: 'Inter', sans-serif;
 }
 
 * { 
