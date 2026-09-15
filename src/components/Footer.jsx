@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 
@@ -7,7 +6,7 @@ const SocialLink = ({ href, icon }) => (
     href={href} 
     target="_blank" 
     rel="noopener noreferrer" 
-    className="text-white hover:text-[#CD4631] transition-colors"
+    className="text-white hover:text-[#A74A38] transition-colors"
   >
     <Icon icon={icon} className="w-5 h-5" />
   </a>
@@ -18,7 +17,7 @@ const FooterButton = ({ buttonText, link }) => {
   <Link
     key={link}
     to={link}
-    className="inline-block w-full bg-[#EAE6DB] text-[16px] text-msa-black text-center  rounded-[8px] px-1 py-1 border-2 border-[#A74A38] hover:bg-[#CD4631] hover:text-white transition-colors"
+    className="inline-block w-full bg-[#EAE6DB] text-[16px] text-msa-black text-center  rounded-[8px] px-1 py-1 border-2 border-[#A74A38] hover:bg-[#A74A38] hover:text-white hover:border-[#EAE6DB] transition-colors"
   >
   {buttonText}
   </Link> 
@@ -61,7 +60,7 @@ const SectionLink = ({ pageName, section }) => {
     <Link
       key={`${quickLinks[pageName]}#${sectionSlug}`}
       to={`${quickLinks[pageName]}#${sectionSlug}`}
-      className="text-sm hover:text-[#CD4631] transition-colors"
+      className="text-sm hover:text-[#A74A38] transition-colors"
     >
       {section}
     </Link>
@@ -73,7 +72,7 @@ const PageLinks = ({ pageName , sections }) => (
       <Link
         key={quickLinks[pageName]}
         to={quickLinks[pageName]}
-        className="text-sm font-bold hover:text-[#CD4631] transition-colors"
+        className="text-sm font-bold hover:text-[#A74A38] transition-colors"
       >
       {pageName}
       </Link>        
