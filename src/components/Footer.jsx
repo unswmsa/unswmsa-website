@@ -62,10 +62,8 @@ const FooterButton = ({ buttonText, url }) => {
 const Footer = () => {
 
   return (
-    // Added hidden for all mobile screens
-    <footer className="hidden md:block fixed bottom-0 left-0 right-0 bg-msa-black text-white font-inter z-50">
-      <div className="max-w-7xl mx-auto px-4 py-4 grid grid-cols-7 gap-16">
-        
+    <footer className="bg-msa-black text-white font-inter z-50">      
+      <div className="max-w-7xl mx-auto px-4 py-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 md:gap-16">        
         {/* Column 1: Socials + Contact Us */}
         <div className="flex flex-col items-center justify-center gap-4 w-fit">
           {/* Social media icons row */}
@@ -80,9 +78,9 @@ const Footer = () => {
         </div>
 
         {/* Column 2: Home page links */}
-        <div className="flex items-center flex-col items-start gap-1">
+        <div className="flex items-center flex-col items-start gap-2">
             <PageLink pageName="Home" />
-            <div className="flex flex-col gap-1 mt-2">
+            <div className="flex flex-col gap-2 mt-2">
               <SectionLink pageName="Home" section="Overview" />
               <SectionLink pageName="Home" section="Upcoming" />
               <SectionLink pageName="Home" section="Prayer Times" />
@@ -90,9 +88,9 @@ const Footer = () => {
         </div>
 
         {/* Column 3: About page links */}
-        <div className="flex items-center flex-col items-start gap-1">
+        <div className="flex items-center flex-col items-start gap-2">
             <PageLink pageName="About" />
-            <div className="flex flex-col gap-1 mt-2">
+            <div className="flex flex-col gap-2 mt-2">
               <SectionLink pageName="About" section="About Us" />
               <SectionLink pageName="About" section="Meet the Team" />
               <SectionLink pageName="About" section="Services" />
@@ -100,9 +98,9 @@ const Footer = () => {
         </div>
 
         {/* Column 4: Events links */}
-        <div className="flex items-center flex-col items-start gap-1">
+        <div className="flex items-center flex-col items-start gap-2">
             <PageLink pageName="Events" />
-            <div className="flex flex-col gap-1 mt-2">
+            <div className="flex flex-col gap-2 mt-2">
               <SectionLink pageName="Events" section="Overview" />
               <SectionLink pageName="Events" section="Upcoming" />
               <SectionLink pageName="Events" section="Archive" />
@@ -110,9 +108,9 @@ const Footer = () => {
         </div>
 
         {/* Column 5: Sponsors links */}
-        <div className="flex items-center flex-col items-start gap-1">
+        <div className="flex items-center flex-col items-start gap-2">
             <PageLink pageName="Sponsors" />
-            <div className="flex flex-col gap-1 mt-2">
+            <div className="flex flex-col gap-2 mt-2">
               <SectionLink pageName="Sponsors" section="Tiers" />
               <SectionLink pageName="Sponsors" section="Benefits" />
               <SectionLink pageName="Sponsors" section="Contact Us" />
@@ -120,9 +118,9 @@ const Footer = () => {
         </div>
 
         {/* Column 6: Resources links */}
-        <div className="flex items-center flex-col items-start gap-1">
+        <div className="flex items-center flex-col items-start gap-2">
             <PageLink pageName="Resources" />
-            <div className="flex flex-col gap-1 mt-2">
+            <div className="flex flex-col gap-2 mt-2">
               <SectionLink pageName="Resources" section="Guides" />
               <SectionLink pageName="Resources" section="Lecture Notes" />
               <SectionLink pageName="Resources" section="Duas & Reminders" />
@@ -130,7 +128,6 @@ const Footer = () => {
         </div>
 
         {/* Column 7: Socials + Get Involved */}
-        {/* Column 1: Socials + Contact Us */}
         <div className="flex flex-col items-center justify-center gap-4 w-fit">
           {/* Social media icons row */}
           <div className="flex gap-1">
