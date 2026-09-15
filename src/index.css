@@ -1,3 +1,11 @@
+@import "tailwindcss";
+
+/* Variable colours for tailwind classes */
+@theme {
+  --color-msa-black: #1a1a1a;
+  --font-inter: 'Inter', sans-serif;
+}
+
 * { 
   box-sizing: border-box; 
 }
@@ -43,12 +51,4 @@ main {
 
 .page h1 { 
   font-size: 2rem; 
-}
-
-.footer {
-  padding: 2rem;
-  text-align: center;
-  border-top: 1px solid #eee;
-  color: #777;
-  font-size: 0.9rem;
 }

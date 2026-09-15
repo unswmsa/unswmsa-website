@@ -1,4 +1,5 @@
 import { Outlet, Link } from 'react-router-dom'
+import Footer from './Footer'
 
 // structure & design tbd
 function Layout() {
@@ -18,10 +19,7 @@ function Layout() {
       <main>
         <Outlet />
       </main>
-
-      <footer className="footer">
-        <p>will add in footer deets</p>
-      </footer>
+      <Footer />
     </div>
   )
 }
