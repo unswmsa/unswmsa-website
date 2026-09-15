@@ -34,17 +34,17 @@ const SocialsColumn = ({ buttonText, link }) => (
       <SocialLink href="https://www.youtube.com/@theunswmsa" icon="basil:youtube-outline"/>
       <SocialLink href="https://unswmsa.substack.com/" icon="fa7-regular:clipboard" />
     </div>
-    <FooterButton buttonText={buttonText} url={link} />
+    <FooterButton buttonText={buttonText} link={link} />
   </div>
 );
 
-const quickLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Events', path: '/events' },
-    { name: 'Sponsors', path: '/sponsors' },
-    { name: 'Resources', path: '/resources' },
-];
+const quickLinks = {
+  Home: '/',
+  About: '/about',
+  Events: '/events',
+  Sponsors: '/sponsors',
+  Resources: '/resources',
+};
 
 // Components for each page column
 const SectionLink = ({ pageName, section }) => {
@@ -58,7 +58,6 @@ const SectionLink = ({ pageName, section }) => {
     .replace(/\s+/g, '-');
   return (
     <Link
-      key={`${quickLinks[pageName]}#${sectionSlug}`}
       to={`${quickLinks[pageName]}#${sectionSlug}`}
       className="text-sm hover:text-[#A74A38] transition-colors"
     >
@@ -67,21 +66,24 @@ const SectionLink = ({ pageName, section }) => {
   );
 };
 
-const PageLinks = ({ pageName , sections }) => (
-    <div className="flex items-center flex-col items-start gap-2">
-      <Link
-        key={quickLinks[pageName]}
-        to={quickLinks[pageName]}
-        className="text-sm font-bold hover:text-[#A74A38] transition-colors"
-      >
+const PageLinks = ({ pageName, sections }) => (
+  <div className="flex items-center flex-col items-start gap-2">
+    <Link
+      to={quickLinks[pageName]}
+      className="text-sm font-bold hover:text-[#A74A38] transition-colors"
+    >
       {pageName}
-      </Link>        
-      <div className="flex flex-col gap-2 mt-2">
-        {sections.map((section) => (
-          <SectionLink pageName={pageName} section={section} />
-        ))}
-      </div>
+    </Link>
+    <div className="flex flex-col gap-2 mt-2">
+      {sections.map((section) => (
+        <SectionLink
+          key={`${quickLinks[pageName]}#${section}`}
+          pageName={pageName}
+          section={section}
+        />
+      ))}
     </div>
+  </div>
 );
 
 const Footer = () => {
@@ -102,7 +104,7 @@ const Footer = () => {
         <PageLinks pageName="Events" sections={["Overview", "Upcoming", "Archive"]} />
 
         {/* Column 5: Sponsors links */}
-        <PageLinks pageName="Events" sections={["Tiers", "Benefits", "Contact Us"]} />
+        <PageLinks pageName="Sponsors" sections={["Tiers", "Benefits", "Contact Us"]} />
 
         {/* Column 6: Resources links */}
         <PageLinks pageName="Resources" sections={["Guides", "Lecture Notes", "Duas & Reminders"]} />
