@@ -47,6 +47,22 @@ const Navbar = () => {
           <Icon icon={open ? 'mdi:close' : 'mdi:menu'} className="w-7 h-7" />
         </button>
       </div>
+            {open && (
+        <nav className="md:hidden flex flex-col gap-4 px-6 pb-4">
+          {Object.entries(quickLinks).map(([label, to]) => (
+            <Link key={to} to={to} onClick={() => setOpen(false)} className="font-bold">
+              {label}
+            </Link>
+          ))}
+          <div className="flex gap-3 pt-2">
+            <SocialLink href="https://www.facebook.com/UNSWMSA" icon="eva:facebook-outline" />
+            <SocialLink href="https://www.linkedin.com/company/unsw-muslim-students-association-unswmsa/?viewAsMember=true" icon="eva:linkedin-outline" />
+            <SocialLink href="https://www.instagram.com/unswmsa/" icon="ion:logo-instagram" />
+            <SocialLink href="https://www.youtube.com/@theunswmsa" icon="basil:youtube-outline" />
+            <SocialLink href="https://unswmsa.substack.com/" icon="fa7-regular:clipboard" />
+          </div>
+        </nav>
+      )}
     </header>
   );
 };
