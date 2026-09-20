@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
-import logo from '/public/logo.png';
+import logo from '/src/assets/shared/logo.png';
 
 const SocialLink = ({ href, icon }) => (
   <a href={href} target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#A74A38] transition-colors">
@@ -24,7 +24,7 @@ const Navbar = () => {
     <header className="bg-msa-black text-white font-inter relative">
       <div className="flex items-center justify-between px-6 py-3">
         <Link to="/">
-          <img src={logo} alt="UNSW MSA" className="h-14" />
+          <img src={logo} alt="UNSW MSA" className="h-21" />
         </Link>
 
         <nav className="hidden md:flex gap-8">
