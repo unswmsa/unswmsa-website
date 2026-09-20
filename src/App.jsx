@@ -3,6 +3,8 @@ import Layout from './components/Layout.jsx'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Events from './pages/Events.jsx'
+import Resources from './pages/Resources.jsx'
+import Sponsors from './pages/Sponsors.jsx'
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/sponsors" element={<Sponsors />} />
+          <Route path="/resources" element={<Resources />} />
         </Route>
       </Routes>
     </BrowserRouter>
