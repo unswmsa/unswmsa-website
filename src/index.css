@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Variable colours for tailwind classes */
+/* may need to split this page up but tbd */
 @theme {
   --color-msa-black: #1a1a1a;
   --font-inter: 'Inter', sans-serif;
@@ -49,6 +49,21 @@ main {
   margin: 0 auto; 
 }
 
+.home-page {
+  padding: 0;
+}
+
 .page h1 { 
   font-size: 2rem; 
+}
+
+@keyframes fade-up {
+  0% { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); }
 }
