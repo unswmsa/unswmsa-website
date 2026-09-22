@@ -70,17 +70,15 @@ const OutlineButton = ({ children }) => (
 );
 
 const FeatureCard = ({ card }) => (
-  <div
-    className="relative h-64 rounded-lg overflow-hidden flex flex-col justify-end p-4 text-white"
-    style={{ backgroundImage: `url(${card.bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-  >
+  <div className="rounded-2xl overflow-hidden shadow-lg bg-msa-black">
     <div
-      className="absolute inset-0"
-      style={{ backgroundImage: `url(${gradient})`, backgroundSize: 'cover', opacity: 0.85 }}
+      className="h-40"
+      style={{ backgroundImage: `url(${card.bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     />
-    <div className="relative z-10">
-      <h3 className="font-bold text-lg mb-2">{card.title}</h3>
-      <ul className="text-sm mb-3 space-y-0.5">
+    <div className="p-5 text-white">
+      <h3 className="font-bold text-xl mb-1">{card.title}</h3>
+      <div className="w-10 border-b-2 mb-3" style={{ borderColor: TERRACOTTA }} />
+      <ul className="text-sm mb-6 space-y-0.5">
         {card.items.map((item) => (
           <li key={item}>{item}</li>
         ))}
@@ -121,7 +119,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 px-6 py-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 px-6 py-10">
         {featureCards.map((card) => (
           <FeatureCard key={card.title} card={card} />
         ))}
