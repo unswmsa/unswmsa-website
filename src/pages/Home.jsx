@@ -15,6 +15,7 @@ import taxFactor from '../assets/sponsors/taxfactor.png';
 const TERRACOTTA = '#A74A38';
 const CREAM = '#EAE6DB';
 const SUBSTACK_URL = 'https://unswmsa.substack.com/';
+const SUBSTACK_SUBSRIBE_URL = 'https://unswmsa.substack.com/subscribe?utm_source=menu&simple=true&next=https%3A%2F%2Funswmsa.substack.com%2F';
 
 const featureCards = [
   {
@@ -133,41 +134,45 @@ function Home() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-10">
         <div>
           <h3
             className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
             style={{ borderColor: TERRACOTTA }}
           > Latest Publication
           </h3>
-          <div className="flex flex-col items-center text-center">
+          <div className="flex gap-6 h-64">
             <img
               src={substackCover}
               alt="Within the Well of Wanting"
-              className="w-32 h-32 object-cover rounded-xl mb-4"
+              className="w-64 h-full object-cover rounded-xl shrink-0"
             />
-            <p className="font-bold">Within the Well of Wanting</p>
-            <p className="text-sm text-gray-500 mb-4">Aug 11, 2026</p>
-            <div className="flex gap-3">
-              <a
-                href={SUBSTACK_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-white text-sm px-4 py-1.5 rounded-full"
-                style={{ backgroundColor: TERRACOTTA }}
-              > read more →
-              </a>
-              <a
-                href={SUBSTACK_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-sm px-4 py-1.5 rounded-full border"
-                style={{ borderColor: TERRACOTTA, color: TERRACOTTA }}
-              > Subscribe
-              </a>
+            <div className="flex flex-col justify-between">
+              <div>
+                <p className="font-bold text-lg">Within the Well of Wanting</p>
+                <p className="text-sm text-gray-500">Aug 11, 2026</p>
+              </div>
+              <div className="flex gap-3 self-end">
+                <a
+                  href={SUBSTACK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-white text-sm px-4 py-1.5 rounded-full"
+                  style={{ backgroundColor: TERRACOTTA }}
+                > read more →
+                </a>
+                <a
+                  href={SUBSTACK_SUBSRIBE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-sm px-4 py-1.5 rounded-full border"
+                  style={{ borderColor: TERRACOTTA, color: TERRACOTTA }}
+                > Subscribe
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+          </div>
 
         <div>
           <h3
@@ -175,7 +180,7 @@ function Home() {
             style={{ borderColor: TERRACOTTA }}
           > Term 3 Initiative: MRW
           </h3>
-          <video className="w-full h-52 object-cover rounded-lg" autoPlay muted loop playsInline>
+          <video className="w-full h-64 object-cover rounded-lg" autoPlay muted loop playsInline>
             <source src={introVideo} type="video/mp4" />
           </video>
         </div>
@@ -197,6 +202,37 @@ function Home() {
         <p className="text-white/70 text-sm text-center"> 
           Surah Al-Kahf, 18:13
         </p>
+      </div>
+
+      <div className="px-6 py-16 text-center">
+        <hr className="border-gray-400 mb-8" />
+        <h2 className="font-bold tracking-wide text-lg mb-10" style={{ color: '#76352E' }}>
+          MEET OUR SPONSORS
+        </h2>        
+        <div className="flex flex-wrap items-center justify-center gap-10 mb-10">
+          <img
+            src={icfal}
+            alt="Islamic Co-operative Finance Australia"
+            className="h-28 object-contain hover:scale-105 transition-transform duration-300"
+          />
+          <img
+            src={headstartLegal}
+            alt="Headstart Legal"
+            className="h-28 object-contain hover:scale-105 transition-transform duration-300"
+          />
+          <img
+            src={taxFactor}
+            alt="The Tax Factor"
+            className="h-28 object-contain hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <a
+          href="/sponsors"
+          className="inline-block text-white text-sm font-bold px-5 py-2 rounded-full"
+          style={{ backgroundColor: TERRACOTTA }}
+        >LEARN MORE
+        </a>
+        <hr className="border-gray-400 mt-8" />
       </div>
     </section>
   );
