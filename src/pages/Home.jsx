@@ -11,6 +11,7 @@ import ayah from '../assets/home/ayah.png';
 import headstartLegal from '../assets/sponsors/headstartlegal.png';
 import icfal from '../assets/sponsors/ifcal.png';
 import taxFactor from '../assets/sponsors/taxfactor.png';
+import { Icon } from '@iconify/react';
 
 const TERRACOTTA = '#A74A38';
 const CREAM = '#EAE6DB';
@@ -103,7 +104,7 @@ function Home() {
   return (
     <section className="home-page">
       <div
-        className="relative flex flex-col items-center justify-start text-center px-4 pt-24 min-h-screen"
+        className="relative flex flex-col items-center justify-start text-center px-4 pt-24 pb-24"
         style={{
           backgroundImage: `url(${gradient})`,
           backgroundSize: 'cover',
@@ -128,13 +129,13 @@ function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 px-6 py-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 px-6 py-10">
         {featureCards.map((card) => (
           <FeatureCard key={card.title} card={card} />
         ))}
       </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-10">
         <div>
           <h3
             className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
@@ -187,7 +188,7 @@ function Home() {
       </div>
 
       <div
-        className="relative w-full py-16 px-6 flex flex-col items-center justify-center gap-4 mt-10"
+        className="relative flex flex-col items-center justify-start text-center px-4 pt-24 pb-24"
         style={{
           backgroundImage: `url(${quranBg})`,
           backgroundSize: 'cover',
@@ -203,8 +204,8 @@ function Home() {
           Surah Al-Kahf, 18:13
         </p>
       </div>
-
-      <div className="px-6 py-16 text-center">
+    
+      <div className="max-w-6xl mx-auto px-6 py-16 text-center">
         <hr className="border-gray-400 mb-8" />
         <h2 className="font-bold tracking-wide text-lg mb-10" style={{ color: '#76352E' }}>
           MEET OUR SPONSORS
@@ -233,6 +234,29 @@ function Home() {
         >LEARN MORE
         </a>
         <hr className="border-gray-400 mt-8" />
+      </div>
+
+      <div
+        className="mx-10 mb-10 rounded-2xl p-8 flex flex-col md:flex-row justify-between items-center gap-8 text-white max-w-6xl md:mx-auto"
+        style={{
+          backgroundImage: `url(${gradient})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <h3 className="text-3xl font-bold">Contact Information</h3>
+        <div className="space-y-4 text-base pr-8">
+          <p className="flex items-center gap-3">
+            <Icon icon="ph:phone" className="w-5 h-5" /> 0470 100 936
+          </p>
+          <p className="flex items-center gap-3">
+            <Icon icon="ph:envelope-simple" className="w-5 h-5" />
+            <a href="mailto:unswmsa@gmail.com" className="underline">unswmsa@gmail.com</a>
+          </p>
+          <p className="flex items-center gap-3">
+            <Icon icon="ph:map-pin" className="w-5 h-5" /> AGSM Room 105
+          </p>
+        </div>
       </div>
     </section>
   );
