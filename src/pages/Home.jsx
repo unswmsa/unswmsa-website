@@ -4,9 +4,12 @@ import box2 from '../assets/home/box2.png';
 import box3 from '../assets/home/box3.png';
 import gradient from '../assets/shared/gradient.png';
 import logo from '../assets/shared/logo.png';
+import substackCover from '../assets/home/substack.png';
+import introVideo from '../assets/home/intro-video.mp4';
 
 const TERRACOTTA = '#A74A38';
 const CREAM = '#EAE6DB';
+const SUBSTACK_URL = 'https://unswmsa.substack.com/';
 
 const featureCards = [
   {
@@ -123,6 +126,54 @@ function Home() {
         {featureCards.map((card) => (
           <FeatureCard key={card.title} card={card} />
         ))}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-10">
+        <div>
+          <h3
+            className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
+            style={{ borderColor: TERRACOTTA }}
+          > Latest Publication
+          </h3>
+          <div className="flex flex-col items-center text-center">
+            <img
+              src={substackCover}
+              alt="Within the Well of Wanting"
+              className="w-32 h-32 object-cover rounded-xl mb-4"
+            />
+            <p className="font-bold">Within the Well of Wanting</p>
+            <p className="text-sm text-gray-500 mb-4">Aug 11, 2026</p>
+            <div className="flex gap-3">
+              <a
+                href={SUBSTACK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-white text-sm px-4 py-1.5 rounded-full"
+                style={{ backgroundColor: TERRACOTTA }}
+              > read more →
+              </a>
+              <a
+                href={SUBSTACK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-sm px-4 py-1.5 rounded-full border"
+                style={{ borderColor: TERRACOTTA, color: TERRACOTTA }}
+              > Subscribe
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3
+            className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
+            style={{ borderColor: TERRACOTTA }}
+          > Term 3 Initiative: MRW
+          </h3>
+          <video className="w-full h-52 object-cover rounded-lg" autoPlay muted loop playsInline>
+            <source src={introVideo} type="video/mp4" />
+          </video>
+        </div>
       </div>
     </section>
   );
