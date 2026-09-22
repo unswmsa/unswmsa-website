@@ -136,44 +136,44 @@ function Home() {
       </div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-10">
-        <div>
-          <h3
-            className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
-            style={{ borderColor: TERRACOTTA }}
-          > Latest Publication
-          </h3>
-          <div className="flex gap-6 h-64">
-            <img
-              src={substackCover}
-              alt="Within the Well of Wanting"
-              className="w-64 h-full object-cover rounded-xl shrink-0"
-            />
-            <div className="flex flex-col justify-between">
-              <div>
-                <p className="font-bold text-lg">Within the Well of Wanting</p>
-                <p className="text-sm text-gray-500">Aug 11, 2026</p>
-              </div>
-              <div className="flex gap-3 self-end">
-                <a
-                  href={SUBSTACK_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-white text-sm px-4 py-1.5 rounded-full"
-                  style={{ backgroundColor: TERRACOTTA }}
-                > read more →
-                </a>
-                <a
-                  href={SUBSTACK_SUBSRIBE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-sm px-4 py-1.5 rounded-full border"
-                  style={{ borderColor: TERRACOTTA, color: TERRACOTTA }}
-                > Subscribe
-                </a>
-              </div>
+       <div>
+        <h3
+          className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
+          style={{ borderColor: TERRACOTTA }}
+        > Latest Publication
+        </h3>
+        <div className="flex flex-col sm:flex-row gap-6 sm:h-64">
+          <img
+            src={substackCover}
+            alt="Within the Well of Wanting"
+            className="w-full sm:w-64 h-64 sm:h-full object-cover rounded-xl shrink-0"
+          />
+          <div className="flex flex-col justify-between">
+            <div>
+              <p className="font-bold text-lg">Within the Well of Wanting</p>
+              <p className="text-sm text-gray-500">Aug 11, 2026</p>
+            </div>
+            <div className="flex gap-3 mt-4 sm:mt-0 sm:self-end">
+              <a
+                href={SUBSTACK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-white text-sm px-4 py-1.5 rounded-full whitespace-nowrap"
+                style={{ backgroundColor: TERRACOTTA }}
+              > read more →
+              </a>
+              <a
+                href={SUBSTACK_SUBSRIBE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-sm px-4 py-1.5 rounded-full border whitespace-nowrap"
+                style={{ borderColor: TERRACOTTA, color: TERRACOTTA }}
+              > Subscribe
+              </a>
             </div>
           </div>
-          </div>
+        </div>
+      </div>
 
         <div>
           <h3
