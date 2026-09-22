@@ -6,6 +6,11 @@ import gradient from '../assets/shared/gradient.png';
 import logo from '../assets/shared/logo.png';
 import substackCover from '../assets/home/substack.png';
 import introVideo from '../assets/home/intro-video.mp4';
+import quranBg from '../assets/home/quranbg.png';
+import ayah from '../assets/home/ayah.png';
+import headstartLegal from '../assets/sponsors/headstartlegal.png';
+import icfal from '../assets/sponsors/ifcal.png';
+import taxFactor from '../assets/sponsors/taxfactor.png';
 
 const TERRACOTTA = '#A74A38';
 const CREAM = '#EAE6DB';
@@ -174,6 +179,24 @@ function Home() {
             <source src={introVideo} type="video/mp4" />
           </video>
         </div>
+      </div>
+
+      <div
+        className="relative w-full py-16 px-6 flex flex-col items-center justify-center gap-4 mt-10"
+        style={{
+          backgroundImage: `url(${quranBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <img src={ayah} alt="Quran ayah in Arabic" className="max-w-2xl w-full" />
+        <p className="text-white italic text-center max-w-xl">
+          "Indeed, they were youths who believed in their Lord, and We increased them in guidance"
+        </p>
+        <p className="text-white/70 text-sm text-center"> 
+          Surah Al-Kahf, 18:13
+        </p>
       </div>
     </section>
   );
