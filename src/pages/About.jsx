@@ -223,6 +223,50 @@ const Carousel = ({ items, cardsPerView, renderItem, keyFn }) => {
   );
 };
 
+const PrayerLocationCard = ({ title, times, location, details, mapEmbedUrl }) => (
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mb-10">
+    <div className="bg-white rounded-2xl p-6 shadow-md">
+      <div
+        className="rounded-full text-white font-bold flex justify-between items-center px-6 py-3 mb-4"
+        style={{ backgroundColor: TERRACOTTA }}
+      >
+        <span>{title}</span>
+        <span>{times}</span>
+      </div>
+      <p className="font-bold" style={{ color: TERRACOTTA }}>Location: {location}</p>
+      <p className="font-bold mt-2" style={{ color: TERRACOTTA }}>Details:</p>
+      <ul className="list-disc list-inside" style={{ color: TERRACOTTA }}>
+        {details.map((d) => (
+          <li key={d}>{d}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div className="relative">
+      <div
+        className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 z-10"
+        style={{ borderColor: TERRACOTTA }}
+      />
+      <div
+        className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 z-10"
+        style={{ borderColor: TERRACOTTA }}
+      />
+      <div className="rounded-2xl overflow-hidden shadow-md h-64">
+        <iframe
+          src={mapEmbedUrl}
+          title={`${title} map`}
+          className="w-full h-full border-0"
+          loading="lazy"
+          allow="geolocation"
+        />
+      </div>
+      <p className="text-xs text-gray-500 mt-1 text-center">
+        Map by <a href="https://www.mazemap.com/" target="_blank" rel="noopener noreferrer" className="underline">MazeMap</a>
+      </p>
+    </div>
+  </div>
+);
+
 function About() {
   return (
     <section className="home-page">
@@ -273,14 +317,34 @@ function About() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-2">Meet the Ext Shura</h2>
+        <h2 className="text-3xl font-bold mb-2">Jumm'uah Timings</h2>
         <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
-        <Carousel
-          items={extShuraTeams}
-          cardsPerView={3}
-          keyFn={(t) => t.team}
-          renderItem={(t) => <ExtShuraCard team={t} />}
+
+        <PrayerLocationCard
+          title="Upper Campus"
+          times="12:15 pm, 2:00pm"
+          location="AGSM 105"
+          details={['Brothers only', 'Wudu areas available']}
+          mapEmbedUrl="https://use.mazemap.com/embed.html#v=1&zlevel=8&center=151.235670,-33.918234&zoom=18&campusid=111&sharepoitype=identifier&sharepoi=KENC~G27~L1~105&utm_medium=iframe"
         />
+
+        <PrayerLocationCard
+          title="Lower Campus"
+          times="1:15pm"
+          location="Fitness & Aquatic Centre Gym"
+          details={['1:15pm - 1:50pm', 'Wudu facilities at level 3, Squarehouse UNSW.']}
+          mapEmbedUrl="https://use.mazemap.com/embed.html#v=1&zlevel=8&center=151.226653,-33.915282&zoom=18&campusid=111&sharepoitype=poi&sharepoi=1001204817&utm_medium=iframe"
+        />
+      </div>
+      <div className="max-w-6xl mx-auto px-6 py-16">
+          <h2 className="text-3xl font-bold mb-2">Meet the Ext Shura</h2>
+          <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
+          <Carousel
+            items={extShuraTeams}
+            cardsPerView={3}
+            keyFn={(t) => t.team}
+            renderItem={(t) => <ExtShuraCard team={t} />}
+          />
       </div>
     </section>
   );
