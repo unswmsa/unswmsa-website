@@ -24,7 +24,7 @@ const Navbar = () => {
     <header className="bg-msa-black text-white font-inter relative">
       <div className="flex items-center justify-between px-6 py-3">
         <Link to="/">
-          <img src={logo} alt="UNSW MSA" className="h-21" />
+          <img src={logo} alt="UNSW MSA" className="h-10" />
         </Link>
 
         <nav className="hidden md:flex gap-8">
