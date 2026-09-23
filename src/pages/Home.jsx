@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import { useState } from 'react';
 import gradient from '../assets/shared/gradient.png';
 import logo from '../assets/shared/logo.png';
 import substackCover from '../assets/home/substack.png';
@@ -10,17 +11,23 @@ import icfal from '../assets/sponsors/ifcal.png';
 import taxFactor from '../assets/sponsors/taxfactor.png';
 import { featureCards } from '../data/homeData';
 import { TERRACOTTA, TypingTagline, OutlineButton, FeatureCard } from '../components/home/HomeComponents';
+import Loading from '../components/Loading';
 
 const SUBSTACK_URL = 'https://unswmsa.substack.com/';
 const SUBSTACK_SUBSCRIBE_URL =
   'https://unswmsa.substack.com/subscribe?utm_source=menu&simple=true&next=https%3A%2F%2Funswmsa.substack.com%2F';
 
 function Home() {
+  const [showLoading, setShowLoading] = useState(true);
+
   return (
+   <>
+    {showLoading && <Loading onFinish={() => setShowLoading(false)} />}
     <section className="home-page">
       <div
         className="relative flex flex-col items-center justify-start text-center px-4 pt-24 pb-24"
         style={{
+          backgroundColor: '#1a1a1a',
           backgroundImage: `url(${gradient})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -36,11 +43,13 @@ function Home() {
           UNSWMSA
         </h1>
         <div className="opacity-0 animate-[fade-up_0.8s_ease-out_0.6s_forwards]">
-          <TypingTagline />
+          {!showLoading && <TypingTagline />}
         </div>
-        <div className="flex gap-3 mt-6 opacity-0 animate-[fade-up_0.8s_ease-out_0.9s_forwards]">
-          <OutlineButton>Join Us Now</OutlineButton>
-          <OutlineButton>About Us</OutlineButton>
+       <div className="flex gap-3 mt-6 opacity-0 animate-[fade-up_0.8s_ease-out_0.9s_forwards]">
+          <OutlineButton href="https://campus.hellorubric.com/?s=6361" external>
+            Join Us Now
+          </OutlineButton>
+          <OutlineButton href="/about">About Us</OutlineButton>
         </div>
       </div>
 
@@ -73,7 +82,7 @@ function Home() {
                   href={SUBSTACK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-white text-sm px-4 py-1.5 rounded-full whitespace-nowrap"
+                  className="inline-block text-white text-sm px-4 py-1.5 rounded-full whitespace-nowrap hover:opacity-85 transition-opacity"
                   style={{ backgroundColor: TERRACOTTA }}
                 > read more →
                 </a>
@@ -81,9 +90,7 @@ function Home() {
                   href={SUBSTACK_SUBSCRIBE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-sm px-4 py-1.5 rounded-full border whitespace-nowrap"
-                  style={{ borderColor: TERRACOTTA, color: TERRACOTTA }}
-                > Subscribe
+                  className="inline-block text-sm px-4 py-1.5 rounded-full border whitespace-nowrap border-[#A74A38] text-[#A74A38] hover:bg-[#D9D2C0] transition-colors"                > Subscribe
                 </a>
               </div>
             </div>
@@ -142,10 +149,9 @@ function Home() {
         </div>
         <a
           href="/sponsors"
-          className="inline-block text-white text-sm font-bold px-5 py-2 rounded-full"
+          className="inline-block text-white text-sm font-bold px-5 py-2 rounded-full hover:opacity-85 transition-opacity"
           style={{ backgroundColor: TERRACOTTA }}
-        >
-          LEARN MORE
+        > LEARN MORE
         </a>
         <hr className="border-gray-400 mt-8" />
       </div>
@@ -158,23 +164,30 @@ function Home() {
           backgroundPosition: 'center',
         }}
       >
-        <h3 className="text-3xl font-bold">Contact Information</h3>
-        <div className="space-y-4 text-base pr-8">
-          <p className="flex items-center gap-3">
-            <Icon icon="ph:phone" className="w-5 h-5" /> 0470 100 936
-          </p>
-          <p className="flex items-center gap-3">
-            <Icon icon="ph:envelope-simple" className="w-5 h-5" />
-            <a href="mailto:unswmsa@gmail.com" className="underline">
-              unswmsa@gmail.com
+        <div className="flex-1">
+          <h3 className="text-3xl font-bold mb-4">Musallah Location</h3>
+          <div className="space-y-4 text-base pr-8">
+            <p className="flex items-center gap-3">
+              <Icon icon="ph:map-pin" className="w-5 h-5" /> AGSM Room 105
+            </p>
+            <a href="/about#jummuah-timings" className="underline text-sm text-white/80">
+              See Jumm'uah prayer times →
             </a>
-          </p>
-          <p className="flex items-center gap-3">
-            <Icon icon="ph:map-pin" className="w-5 h-5" /> AGSM Room 105
-          </p>
+          </div>
+        </div>
+
+        <div className="w-full md:w-72 shrink-0 rounded-xl overflow-hidden shadow-md">
+          <iframe
+            src="https://use.mazemap.com/embed.html#v=1&zlevel=8&center=151.235670,-33.918234&zoom=18&campusid=111&sharepoitype=identifier&sharepoi=KENC~G27~L1~105&utm_medium=iframe"
+            title="Musallah location map"
+            className="w-full h-48 border-0"
+            loading="lazy"
+            allow="geolocation"
+          />
         </div>
       </div>
     </section>
+    </>
   );
 }
 

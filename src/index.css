@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* may need to split this page up but tbd */
 @theme {
   --color-msa-black: #1a1a1a;
   --font-inter: 'Inter', sans-serif;
@@ -55,6 +54,18 @@ main {
 
 .page h1 { 
   font-size: 2rem; 
+}
+
+@keyframes spin-in {
+  0% { 
+    transform: scale(0) rotate(-180deg); 
+    opacity: 0; 
+  }
+
+  100% { 
+    transform: scale(1) rotate(0deg); 
+    opacity: 1; 
+  }
 }
 
 @keyframes fade-up {

@@ -31,13 +31,15 @@ export const TypingTagline = () => {
   );
 };
 
-export const OutlineButton = ({ children }) => (
-  <button
-    className="px-4 py-1 rounded border"
-    style={{ backgroundColor: CREAM, borderColor: TERRACOTTA }}
+export const OutlineButton = ({ children, href, external }) => (
+  <a  
+    href={href}
+    target={external ? '_blank' : undefined}
+    rel={external ? 'noopener noreferrer' : undefined}
+    className="px-4 py-1 rounded border bg-[#EAE6DB] text-msa-black border-[#A74A38] hover:bg-[#A74A38] hover:text-white transition-colors"
   >
     {children}
-  </button>
+  </a>
 );
 
 export const FeatureCard = ({ card }) => (
@@ -54,7 +56,7 @@ export const FeatureCard = ({ card }) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
-      <a href={card.to} className="text-sm underline">
+      <a href={card.to} className="text-sm underline hover:text-white/80 transition-colors">
         {card.linkText} →
       </a>
     </div>
