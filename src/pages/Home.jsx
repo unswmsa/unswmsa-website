@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import { useState } from 'react';
 import gradient from '../assets/shared/gradient.png';
 import logo from '../assets/shared/logo.png';
 import substackCover from '../assets/home/substack.png';
@@ -10,17 +11,23 @@ import icfal from '../assets/sponsors/ifcal.png';
 import taxFactor from '../assets/sponsors/taxfactor.png';
 import { featureCards } from '../data/homeData';
 import { TERRACOTTA, TypingTagline, OutlineButton, FeatureCard } from '../components/home/HomeComponents';
+import Loading from '../components/Loading';
 
 const SUBSTACK_URL = 'https://unswmsa.substack.com/';
 const SUBSTACK_SUBSCRIBE_URL =
   'https://unswmsa.substack.com/subscribe?utm_source=menu&simple=true&next=https%3A%2F%2Funswmsa.substack.com%2F';
 
 function Home() {
+  const [showLoading, setShowLoading] = useState(true);
+
   return (
+   <>
+    {showLoading && <Loading onFinish={() => setShowLoading(false)} />}
     <section className="home-page">
       <div
         className="relative flex flex-col items-center justify-start text-center px-4 pt-24 pb-24"
         style={{
+          backgroundColor: '#1a1a1a',
           backgroundImage: `url(${gradient})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -36,7 +43,7 @@ function Home() {
           UNSWMSA
         </h1>
         <div className="opacity-0 animate-[fade-up_0.8s_ease-out_0.6s_forwards]">
-          <TypingTagline />
+          {!showLoading && <TypingTagline />}
         </div>
        <div className="flex gap-3 mt-6 opacity-0 animate-[fade-up_0.8s_ease-out_0.9s_forwards]">
           <OutlineButton href="https://campus.hellorubric.com/?s=6361" external>
@@ -180,6 +187,7 @@ function Home() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
