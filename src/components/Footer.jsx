@@ -14,26 +14,18 @@ const SocialLink = ({ href, icon }) => (
 
 const FooterButton = ({ buttonText, link }) => {
   return (
-  <Link
-    key={link}
-    to={link}
-    className="inline-block w-full bg-[#EAE6DB] text-[16px] text-msa-black text-center  rounded-[8px] px-1 py-1 border-2 border-[#A74A38] hover:bg-[#A74A38] hover:text-white hover:border-[#EAE6DB] transition-colors"
-  >
-  {buttonText}
-  </Link> 
+    <Link
+      key={link}
+      to={link}
+      className="inline-block bg-[#EAE6DB] text-sm text-msa-black text-center rounded-[8px] px-4 py-1.5 border-2 border-[#A74A38] hover:bg-[#A74A38] hover:text-white hover:border-[#EAE6DB] transition-colors"
+    >
+      {buttonText}
+    </Link>
   );
 };
 
 const SocialsColumn = ({ buttonText, link }) => (
-  <div className="flex flex-col items-center justify-center gap-4 w-fit">
-    {/* Social media icons row */}
-    <div className="flex gap-1">
-      <SocialLink href="https://www.facebook.com/UNSWMSA" icon="eva:facebook-outline" />
-      <SocialLink href="https://www.linkedin.com/company/unsw-muslim-students-association-unswmsa/?viewAsMember=true" icon="eva:linkedin-outline" />
-      <SocialLink href="https://www.instagram.com/unswmsa/" icon="ion:logo-instagram" />
-      <SocialLink href="https://www.youtube.com/@theunswmsa" icon="basil:youtube-outline"/>
-      <SocialLink href="https://unswmsa.substack.com/" icon="fa7-regular:clipboard" />
-    </div>
+  <div className="flex items-start">
     <FooterButton buttonText={buttonText} link={link} />
   </div>
 );
@@ -90,13 +82,9 @@ const Footer = () => {
 
   return (
     <footer className="bg-msa-black text-white font-inter z-50">      
-      <div className="max-w-7xl mx-auto px-4 py-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 md:gap-16">        
-        {/* Column 1: Socials + Contact Us */}
-        <SocialsColumn buttonText="Contact Us" link="mailto:unswmsa@gmail.com" />
-
+      <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-6 md:gap-y-10">
         {/* Column 2: Home page links */}
         <PageLinks pageName="Home" sections={["Overview", "Upcoming", "Prayer Times"]} />
-
         {/* Column 3: About page links */}
         <PageLinks pageName="About" sections={["About us", "Meet the Team", "Services"]} />
 
@@ -111,6 +99,17 @@ const Footer = () => {
 
         {/* Column 7: Socials + Get Involved */}
         <SocialsColumn buttonText="Get Involved" link="/get-involved" />
+      </div>
+      
+      <div className="border-t border-white/10 py-4 px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50 max-w-6xl mx-auto">
+        <p>© {new Date().getFullYear()} UNSW MSA</p>
+        <div className="flex gap-3">
+          <SocialLink href="https://www.facebook.com/UNSWMSA" icon="eva:facebook-outline" />
+          <SocialLink href="https://www.linkedin.com/company/unsw-muslim-students-association-unswmsa/?viewAsMember=true" icon="eva:linkedin-outline" />
+          <SocialLink href="https://www.instagram.com/unswmsa/" icon="ion:logo-instagram" />
+          <SocialLink href="https://www.youtube.com/@theunswmsa" icon="basil:youtube-outline" />
+          <SocialLink href="https://unswmsa.substack.com/" icon="fa7-regular:clipboard" />
+        </div>
       </div>
     </footer>
   );
