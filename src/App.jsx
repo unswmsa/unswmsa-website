@@ -5,6 +5,7 @@ import About from './pages/About.jsx'
 import Events from './pages/Events.jsx'
 import Resources from './pages/Resources.jsx'
 import Sponsors from './pages/Sponsors.jsx'
+import GetInvolved from './pages/GetInvolved.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/get-involved" element={<GetInvolved />} />
         </Route>
       </Routes>
     </BrowserRouter>
