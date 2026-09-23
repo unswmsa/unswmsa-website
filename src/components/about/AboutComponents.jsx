@@ -6,6 +6,20 @@ export const MAROON = '#76352E';
 export const CARD_WIDTH = 260;
 export const CARD_GAP = 24;
 
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' ? window.innerWidth < 640 : false
+  );
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 640);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return isMobile;
+};
+
 export const TeamCard = ({ member }) => {
   const [flipped, setFlipped] = useState(false);
 
@@ -109,26 +123,24 @@ export const ExtShuraCard = ({ team }) => (
 );
 
 export const Carousel = ({ items, cardsPerView, renderItem, keyFn }) => {
+  const isMobile = useIsMobile();
+  const effectiveCardsPerView = isMobile ? 1 : cardsPerView;
+
   const [index, setIndex] = useState(0);
-  const maxIndex = Math.max(0, items.length - cardsPerView);
+  const maxIndex = Math.max(0, items.length - effectiveCardsPerView);
 
   const goPrev = () => setIndex((i) => Math.max(0, i - 1));
   const goNext = () => setIndex((i) => Math.min(maxIndex, i + 1));
 
   return (
     <div className="relative flex items-center justify-center gap-4 py-8">
-      <button
-        onClick={goPrev}
-        disabled={index === 0}
-        aria-label="Previous"
-        className="disabled:opacity-30 shrink-0 active:scale-90 transition-transform"
-      >
+      <button onClick={goPrev} disabled={index === 0} aria-label="Previous" className="disabled:opacity-30 shrink-0 active:scale-90 transition-transform">
         <Icon icon="ph:caret-left-bold" className="w-8 h-8" style={{ color: TERRACOTTA }} />
       </button>
 
       <div
         className="overflow-hidden"
-        style={{ width: `${cardsPerView * CARD_WIDTH + (cardsPerView - 1) * CARD_GAP}px` }}
+        style={{ width: `${effectiveCardsPerView * CARD_WIDTH + (effectiveCardsPerView - 1) * CARD_GAP}px` }}
       >
         <div
           className="flex transition-transform duration-500 ease-in-out"
@@ -143,12 +155,7 @@ export const Carousel = ({ items, cardsPerView, renderItem, keyFn }) => {
         </div>
       </div>
 
-      <button
-        onClick={goNext}
-        disabled={index === maxIndex}
-        aria-label="Next"
-        className="disabled:opacity-30 shrink-0 active:scale-90 transition-transform"
-      >
+      <button onClick={goNext} disabled={index === maxIndex} aria-label="Next" className="disabled:opacity-30 shrink-0 active:scale-90 transition-transform">
         <Icon icon="ph:caret-right-bold" className="w-8 h-8" style={{ color: TERRACOTTA }} />
       </button>
 
