@@ -92,7 +92,7 @@ const Footer = () => {
     <footer className="bg-msa-black text-white font-inter z-50">      
       <div className="max-w-7xl mx-auto px-4 py-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 md:gap-16">        
         {/* Column 1: Socials + Contact Us */}
-        <SocialsColumn buttonText="Contact Us" link="/sponsors#contact-us" />
+        <SocialsColumn buttonText="Contact Us" link="mailto:unswmsa@gmail.com" />
 
         {/* Column 2: Home page links */}
         <PageLinks pageName="Home" sections={["Overview", "Upcoming", "Prayer Times"]} />
