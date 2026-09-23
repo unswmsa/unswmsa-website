@@ -70,14 +70,14 @@ const extShuraTeams = [
     members: ['Aamina', 'Nadia', 'Mahmoud', 'Anhaar', 'Ahmed', 'Saavan'],
   },
   {
-    team: 'Education',
-    icon: 'ph:book-open-text-fill',
-    members: ['Hiba (lead)'],
-  },
-  {
     team: 'Website',
     icon: 'ph:code-fill',
     members: ['Noor Babar (Lead)', 'Mahir Bhuiyan (Lead)', 'Ihsan Ahmad', 'Yumna Zaheed', 'Hajara Musthafa'],
+  },
+  {
+    team: 'Education',
+    icon: 'ph:book-open-text-fill',
+    members: ['Hiba (lead)'],
   },
   {
     team: 'Musallah',
@@ -161,17 +161,6 @@ const ExtShuraCard = ({ team }) => (
         <li key={i}>{name}</li>
       ))}
     </ul>
-
-    {team.subteams?.map((sub) => (
-      <div key={sub.team} className="mt-4 pt-4 border-t border-white/30">
-        <p className="font-semibold text-white text-sm mb-1">{sub.team}</p>
-        <ul className="text-white text-sm space-y-1">
-          {sub.members.map((name, i) => (
-            <li key={i}>{name}</li>
-          ))}
-        </ul>
-      </div>
-    ))}
   </div>
 );
 
@@ -267,6 +256,29 @@ const PrayerLocationCard = ({ title, times, location, details, mapEmbedUrl }) =>
   </div>
 );
 
+const services = [
+  {
+    title: 'Halaqa',
+    description: 'Weekly religious discussions',
+    schedule: 'Brothers: Wednesday 3pm - 4pm @ Room\nSisters: Tuesday 12pm - 2pm @ Room',
+  },
+  {
+    title: 'Socials',
+    description: 'Engaging events to connect with friends and have fun!',
+    schedule: 'Brothers Futsal - Every Friday 3pm - 4pm @ Village Green',
+  },
+  {
+    title: 'Dawah',
+    description: 'Spreading the message at Library Lawn every Wednesday.',
+    schedule: '',
+  },
+  {
+    title: 'Education',
+    description: 'Initiatives for students on campus to increase their knowledge',
+    schedule: '',
+  },
+];
+
 function About() {
   return (
     <section className="home-page">
@@ -306,17 +318,6 @@ function About() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-2">Meet the Shura</h2>
-        <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
-        <Carousel
-          items={shuraMembers}
-          cardsPerView={2}
-          keyFn={(m, i) => i}
-          renderItem={(m) => <TeamCard member={m} />}
-        />
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 py-16">
         <h2 className="text-3xl font-bold mb-2">Jumm'uah Timings</h2>
         <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
 
@@ -336,15 +337,37 @@ function About() {
           mapEmbedUrl="https://use.mazemap.com/embed.html#v=1&zlevel=8&center=151.226653,-33.915282&zoom=18&campusid=111&sharepoitype=poi&sharepoi=1001204817&utm_medium=iframe"
         />
       </div>
+
       <div className="max-w-6xl mx-auto px-6 py-16">
-          <h2 className="text-3xl font-bold mb-2">Meet the Ext Shura</h2>
-          <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
-          <Carousel
-            items={extShuraTeams}
-            cardsPerView={3}
-            keyFn={(t) => t.team}
-            renderItem={(t) => <ExtShuraCard team={t} />}
-          />
+        <h2 className="text-3xl font-bold mb-2">Services</h2>
+        <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          {services.map((service) => (
+            <ServiceCard key={service.title} service={service} />
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-2">Meet the Shura</h2>
+        <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
+        <Carousel
+          items={shuraMembers}
+          cardsPerView={2}
+          keyFn={(m, i) => i}
+          renderItem={(m) => <TeamCard member={m} />}
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-2">Meet the Ext Shura</h2>
+        <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
+        <Carousel
+          items={extShuraTeams}
+          cardsPerView={3}
+          keyFn={(t) => t.team}
+          renderItem={(t) => <ExtShuraCard team={t} />}
+        />
       </div>
     </section>
   );
