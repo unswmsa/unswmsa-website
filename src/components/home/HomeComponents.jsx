@@ -56,7 +56,7 @@ export const FeatureCard = ({ card }) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
-      <a href={card.to} className="text-sm underline">
+      <a href={card.to} className="text-sm underline hover:text-white/80 transition-colors">
         {card.linkText} →
       </a>
     </div>

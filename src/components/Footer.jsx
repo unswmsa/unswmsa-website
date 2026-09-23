@@ -13,22 +13,24 @@ const SocialLink = ({ href, icon }) => (
 );
 
 const FooterButton = ({ buttonText, link }) => {
+  const isExternal = link.startsWith('mailto:') || link.startsWith('http');
+  const className =
+    'inline-block bg-[#EAE6DB] text-sm text-msa-black text-center rounded-[8px] px-4 py-1.5 border-2 border-[#A74A38] hover:bg-[#A74A38] hover:text-white hover:border-[#EAE6DB] transition-colors';
+
+  if (isExternal) {
+    return (
+      <a href={link} className={className}>
+        {buttonText}
+      </a>
+    );
+  }
+
   return (
-    <Link
-      key={link}
-      to={link}
-      className="inline-block bg-[#EAE6DB] text-sm text-msa-black text-center rounded-[8px] px-4 py-1.5 border-2 border-[#A74A38] hover:bg-[#A74A38] hover:text-white hover:border-[#EAE6DB] transition-colors"
-    >
+    <Link to={link} className={className}>
       {buttonText}
     </Link>
   );
 };
-
-const SocialsColumn = ({ buttonText, link }) => (
-  <div className="flex items-start">
-    <FooterButton buttonText={buttonText} link={link} />
-  </div>
-);
 
 const quickLinks = {
   Home: '/',
@@ -83,22 +85,16 @@ const Footer = () => {
   return (
     <footer className="bg-msa-black text-white font-inter z-50">      
       <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-6 md:gap-y-10">
-        {/* Column 2: Home page links */}
-        <PageLinks pageName="Home" sections={["Overview", "Upcoming", "Prayer Times"]} />
-        {/* Column 3: About page links */}
-        <PageLinks pageName="About" sections={["About us", "Meet the Team", "Services"]} />
 
-        {/* Column 4: Events links */}
+        <PageLinks pageName="Home" sections={["Overview", "Latest", "Musallah"]} />
+        <PageLinks pageName="About" sections={["About us", "Services", "Meet the Team"]} />
         <PageLinks pageName="Events" sections={["Overview", "Upcoming", "Archive"]} />
-
-        {/* Column 5: Sponsors links */}
-        <PageLinks pageName="Sponsors" sections={["Tiers", "Benefits", "Contact Us"]} />
-
-        {/* Column 6: Resources links */}
+        <PageLinks pageName="Sponsors" sections={[ "Benefits", "Tiers", "View Prospectus"]} />
         <PageLinks pageName="Resources" sections={["Guides", "Lecture Notes", "Duas & Reminders"]} />
-
-        {/* Column 7: Socials + Get Involved */}
-        <SocialsColumn buttonText="Get Involved" link="/get-involved" />
+        <div className="flex flex-col gap-3 items-start">
+          <FooterButton buttonText="Contact Us" link="mailto:unswmsa@gmail.com" />
+          <FooterButton buttonText="Get Involved" link="/get-involved" />
+        </div>
       </div>
       
       <div className="border-t border-white/10 py-4 px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50 max-w-6xl mx-auto">
