@@ -38,9 +38,11 @@ function Home() {
         <div className="opacity-0 animate-[fade-up_0.8s_ease-out_0.6s_forwards]">
           <TypingTagline />
         </div>
-        <div className="flex gap-3 mt-6 opacity-0 animate-[fade-up_0.8s_ease-out_0.9s_forwards]">
-          <OutlineButton>Join Us Now</OutlineButton>
-          <OutlineButton>About Us</OutlineButton>
+       <div className="flex gap-3 mt-6 opacity-0 animate-[fade-up_0.8s_ease-out_0.9s_forwards]">
+          <OutlineButton href="https://campus.hellorubric.com/?s=6361" external>
+            Join Us Now
+          </OutlineButton>
+          <OutlineButton href="/about">About Us</OutlineButton>
         </div>
       </div>
 
