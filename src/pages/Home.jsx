@@ -3,7 +3,7 @@ import { useState } from 'react';
 import gradient from '../assets/shared/gradient.png';
 import logo from '../assets/shared/logo.png';
 import substackCover from '../assets/home/substack.png';
-import introVideo from '../assets/home/intro-video.mp4';
+import introVideo from '../assets/shared/intro-video.mp4';
 import quranBg from '../assets/home/quranbg.png';
 import ayah from '../assets/home/ayah.png';
 import headstartLegal from '../assets/sponsors/headstartlegal.png';
@@ -12,6 +12,7 @@ import taxFactor from '../assets/sponsors/taxfactor.png';
 import { featureCards } from '../data/homeData';
 import { TERRACOTTA, TypingTagline, OutlineButton, FeatureCard } from '../components/home/HomeComponents';
 import Loading from '../components/Loading';
+import RecapVideo from '../components/RecapVideo';
 
 const SUBSTACK_URL = 'https://unswmsa.substack.com/';
 const SUBSTACK_SUBSCRIBE_URL =
@@ -59,53 +60,63 @@ function Home() {
         ))}
       </div>
 
+      <div className="max-w-6xl mx-auto px-6 py-10">
+        <h3
+          className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
+          style={{ borderColor: TERRACOTTA }}
+        > take a look back to what we did in 2025 :)
+        </h3>
+        <RecapVideo src={introVideo} />
+      </div>
+
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-10">
-        <div>
-          <h3
-            className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
-            style={{ borderColor: TERRACOTTA }}
-          > Latest Publication
-          </h3>
-          <div className="flex flex-col sm:flex-row gap-6 sm:h-64">
-            <img
-              src={substackCover}
-              alt="Within the Well of Wanting"
-              className="w-full sm:w-64 h-64 sm:h-full object-cover rounded-xl shrink-0"
-            />
-            <div className="flex flex-col justify-between">
-              <div>
-                <p className="font-bold text-lg">Within the Well of Wanting</p>
-                <p className="text-sm text-gray-500">Aug 11, 2026</p>
-              </div>
-              <div className="flex gap-3 mt-4 sm:mt-0 sm:self-end">
-                <a
-                  href={SUBSTACK_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-white text-sm px-4 py-1.5 rounded-full whitespace-nowrap hover:opacity-85 transition-opacity"
-                  style={{ backgroundColor: TERRACOTTA }}
-                > read more →
-                </a>
-                <a
-                  href={SUBSTACK_SUBSCRIBE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-sm px-4 py-1.5 rounded-full border whitespace-nowrap border-[#A74A38] text-[#A74A38] hover:bg-[#D9D2C0] transition-colors"                > Subscribe
-                </a>
-              </div>
+      <div>
+        <h3
+          className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
+          style={{ borderColor: TERRACOTTA }}
+        > Latest Publication
+        </h3>
+        <div className="flex flex-col sm:flex-row gap-6 sm:h-64">
+          <img
+            src={substackCover}
+            alt="Within the Well of Wanting"
+            className="w-full sm:w-64 h-64 sm:h-full object-cover rounded-xl shrink-0"
+          />
+          <div className="flex flex-col justify-between">
+            <div>
+              <p className="font-bold text-lg">Within the Well of Wanting</p>
+              <p className="text-sm text-gray-500">Aug 11, 2026</p>
+            </div>
+            <div className="flex gap-3 mt-4 sm:mt-0 sm:self-end">
+              <a
+                href={SUBSTACK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-white text-sm px-4 py-1.5 rounded-full whitespace-nowrap hover:opacity-85 transition-opacity"
+                style={{ backgroundColor: TERRACOTTA }}
+              > read more →
+              </a>
+              <a
+                href={SUBSTACK_SUBSCRIBE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-sm px-4 py-1.5 rounded-full border whitespace-nowrap border-[#A74A38] text-[#A74A38] hover:bg-[#D9D2C0] transition-colors"
+              > Subscribe
+              </a>
             </div>
           </div>
         </div>
+      </div>
 
-        <div>
+      <div>
           <h3
             className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
             style={{ borderColor: TERRACOTTA }}
           > Term 3 Initiative: MRW
           </h3>
-          <video className="w-full h-64 object-cover rounded-lg" autoPlay muted loop playsInline>
-            <source src={introVideo} type="video/mp4" />
-          </video>
+          <div className="w-full h-64 rounded-lg bg-gray-200 flex items-center justify-center">
+            <p className="text-gray-400 font-medium">video coming soonnn</p>
+          </div>
         </div>
       </div>
 
