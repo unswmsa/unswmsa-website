@@ -5,14 +5,16 @@ import gradient from '../assets/shared/gradient.png';
 import pattern from '../assets/shared/background.png';
 import snapshot from '../data/eventsSnapshot.json';
 import { fetchMsaEvents } from '../lib/rubric';
-import { getUpcomingEvents, groupPastEvents, filterByAudience } from '../lib/events';
+import { getUpcomingEvents, groupPastEvents, getCalendarEvents, filterByAudience } from '../lib/events';
 import { RevealSection } from '../components/about/AboutComponents';
 import EventModal from '../components/events/EventModal';
+import EventCalendar from '../components/events/EventCalendar';
 import {
   MAROON,
   EventsHero,
   AudienceFilter,
   SectionHeading,
+  ViewToggle,
   EventCarousel,
   YearTabs,
   TermLabel,
@@ -24,6 +26,7 @@ function Events() {
   const [audience, setAudience] = useState('everyone');
   const [selectedYear, setSelectedYear] = useState(null);
   const [openEvent, setOpenEvent] = useState(null); // { event, upcoming }
+  const [view, setView] = useState('cards'); // upcoming section: 'cards' or 'calendar'
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -46,6 +49,7 @@ function Events() {
   const filteredEvents = useMemo(() => filterByAudience(events, audience), [events, audience]);
   const upcomingEvents = useMemo(() => getUpcomingEvents(filteredEvents), [filteredEvents]);
   const pastEvents = useMemo(() => groupPastEvents(filteredEvents), [filteredEvents]);
+  const calendarEvents = useMemo(() => getCalendarEvents(filteredEvents), [filteredEvents]);
   const yearData = pastEvents.find((y) => y.year === selectedYear) ?? pastEvents[0];
 
   // banner shows the next event regardless of the filter
@@ -54,6 +58,7 @@ function Events() {
   const openUpcoming = useCallback((event) => setOpenEvent({ event, upcoming: true }), []);
   const openPast = useCallback((event) => setOpenEvent({ event, upcoming: false }), []);
   const closeEvent = useCallback(() => setOpenEvent(null), []);
+  const openFromCalendar = useCallback((event) => setOpenEvent({ event, upcoming: event.upcoming }), []);
 
   return (
     <section className="home-page">
@@ -71,8 +76,12 @@ function Events() {
 
       <RevealSection>
         <div id="upcoming" className="max-w-[68rem] mx-auto px-4 sm:px-6 pt-12 md:pt-16 scroll-mt-4">
-          <SectionHeading>Upcoming Events</SectionHeading>
-          {upcomingEvents.length > 0 ? (
+          <SectionHeading action={<ViewToggle view={view} onChange={setView} />}>
+            {view === 'calendar' ? 'Events Calendar' : 'Upcoming Events'}
+          </SectionHeading>
+          {view === 'calendar' ? (
+            <EventCalendar events={calendarEvents} onOpen={openFromCalendar} />
+          ) : upcomingEvents.length > 0 ? (
             <EventCarousel key={audience} events={upcomingEvents} showDots upcoming onOpen={openUpcoming} />
           ) : (
             <p className="text-center py-10" style={{ color: MAROON }}>

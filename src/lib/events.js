@@ -54,6 +54,22 @@ export function getUpcomingEvents(events) {
     });
 }
 
+// every event (weekly ones included, so they land on the right days), oldest first, for the calendar view
+export function getCalendarEvents(events) {
+  return events
+    .slice()
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .map((e) => {
+      const event = withCardDetails(e);
+      return {
+        ...event,
+        upcoming: isUpcoming(e),
+        shortTime: new Date(e.date).toLocaleTimeString('en-AU', { hour: 'numeric', minute: '2-digit' }),
+        description: [event.time, event.location].filter(Boolean).join(' · '),
+      };
+    });
+}
+
 // -> [{ year: 2026, terms: [{ term: 'Term 1', events: [...] }, ...] }, ...] newest year first
 export function groupPastEvents(events) {
   const years = new Map();

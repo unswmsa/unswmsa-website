@@ -109,11 +109,14 @@ export const EventsHero = ({ video, background, pattern, nextEvent, onOpenNext }
   );
 };
 
-export const SectionHeading = ({ children }) => (
+export const SectionHeading = ({ children, action }) => (
   <div className="mb-6">
-    <h2 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: MAROON }}>
-      {children}
-    </h2>
+    <div className="flex items-end justify-between gap-4 mb-2">
+      <h2 className="text-xl md:text-2xl font-semibold" style={{ color: MAROON }}>
+        {children}
+      </h2>
+      {action}
+    </div>
     <hr className="border-t-2 m-0" style={{ borderColor: MAROON }} />
   </div>
 );
@@ -340,3 +343,24 @@ export const AudienceFilter = ({ selected, onSelect }) => {
     </div>
   );
 };
+
+// upcoming (cards) / calendar switch next to the upcoming heading
+export const ViewToggle = ({ view, onChange }) => (
+  <div role="group" aria-label="Choose view" className="inline-flex rounded-full p-0.5 border" style={{ borderColor: `${MAROON}40` }}>
+    {[
+      { value: 'cards', label: 'Upcoming', icon: 'ph:squares-four' },
+      { value: 'calendar', label: 'Calendar', icon: 'ph:calendar-blank' },
+    ].map(({ value, label, icon }) => (
+      <button
+        key={value}
+        onClick={() => onChange(value)}
+        aria-pressed={view === value}
+        className="flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold transition-colors"
+        style={view === value ? { backgroundColor: MAROON, color: 'white' } : { color: MAROON }}
+      >
+        <Icon icon={icon} className="w-4 h-4" />
+        <span className="hidden sm:inline">{label}</span>
+      </button>
+    ))}
+  </div>
+);
