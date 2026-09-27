@@ -36,6 +36,8 @@ const withCardDetails = (event) => {
   const date = new Date(event.date);
   return {
     ...event,
+    // only show a price when there is one, most events are free
+    price: /^free$/i.test(event.price ?? '') ? '' : event.price,
     day: date.getDate(),
     month: date.toLocaleDateString('en-AU', { month: 'short' }).slice(0, 3),
     time: date.toLocaleTimeString('en-AU', { weekday: 'short', hour: 'numeric', minute: '2-digit' }),

@@ -23,7 +23,7 @@ const countdown = (date) => {
 // banner with the 2025 recap video. the video is portrait (9:16), so on phones it fills
 // the banner behind the title. on desktop it sits uncropped on the right with a warm light behind it.
 // kept deliberately calm: the video is the only thing that moves
-export const EventsHero = ({ video, background, pattern, nextEvent, totalEvents, onOpenNext }) => {
+export const EventsHero = ({ video, background, pattern, nextEvent, onOpenNext }) => {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
 
@@ -63,8 +63,8 @@ export const EventsHero = ({ video, background, pattern, nextEvent, totalEvents,
             Halaqahs, sports, socials and more, all year round. Come along, bring a friend.
           </p>
 
-          <div className="mt-6">
-            {nextEvent ? (
+          {nextEvent && (
+            <div className="mt-6">
               <button
                 onClick={onOpenNext}
                 className="group inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-4 py-2 text-xs md:text-sm text-white hover:bg-white/10 transition-colors"
@@ -77,10 +77,8 @@ export const EventsHero = ({ video, background, pattern, nextEvent, totalEvents,
                 </span>
                 <span className="transition-transform group-hover:translate-x-0.5">→</span>
               </button>
-            ) : (
-              <p className="text-sm text-white/60">{totalEvents} events and counting</p>
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
         <div className="absolute inset-0 md:relative md:inset-auto">
@@ -297,15 +295,12 @@ export const YearTabs = ({ years, selected, onSelect }) => (
   </div>
 );
 
-export const TermLabel = ({ term, count }) => (
+export const TermLabel = ({ term }) => (
   <span
     className="inline-block px-5 py-1.5 rounded text-xs sm:text-sm text-white shadow-[0_2px_4px_rgba(0,0,0,0.25)]"
     style={{ backgroundColor: TERRACOTTA }}
   >
     {term}
-    <span className="ml-2 text-white/75">
-      · {count} {count === 1 ? 'event' : 'events'}
-    </span>
   </span>
 );
 

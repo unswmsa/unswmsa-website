@@ -62,7 +62,6 @@ function Events() {
         background={gradient}
         pattern={pattern}
         nextEvent={nextEvent}
-        totalEvents={events.length}
         onOpenNext={() => openUpcoming(nextEvent)}
       />
       {/* floats over the bottom edge of the banner */}
@@ -101,7 +100,7 @@ function Events() {
               {yearData.terms.map(({ term, events: termEvents }) => (
                 <div key={`${audience}-${yearData.year}-${term}`} className="flex flex-col gap-4">
                   <div className="md:pl-10">
-                    <TermLabel term={term} count={termEvents.length} />
+                    <TermLabel term={term} />
                   </div>
                   <EventCarousel events={termEvents} onOpen={openPast} />
                 </div>
