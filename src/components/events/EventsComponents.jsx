@@ -20,10 +20,9 @@ const countdown = (date) => {
   return `in ${days} days`;
 };
 
-// banner with the 2025 recap video. the video is portrait (9:16), so on phones it fills
-// the banner behind the title. on desktop it sits uncropped on the right with a warm light behind it.
+// banner with the 2025 recap video playing behind the title (same layout on phones and desktop).
 // kept deliberately calm: the video is the only thing that moves
-export const EventsHero = ({ video, background, pattern, nextEvent, onOpenNext }) => {
+export const EventsHero = ({ video, background, nextEvent, onOpenNext }) => {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
 
@@ -35,76 +34,55 @@ export const EventsHero = ({ video, background, pattern, nextEvent, onOpenNext }
   return (
     <div
       id="overview"
-      className="relative overflow-hidden h-96 md:h-[34rem]"
+      className="relative overflow-hidden h-80 md:h-[28rem]"
       style={{ backgroundColor: '#120b09', backgroundImage: `url(${background})`, backgroundSize: 'cover' }}
     >
-      {/* faint msa pattern + a warm light behind the video */}
-      <div
-        className="absolute inset-0 opacity-[0.05] mix-blend-screen"
-        style={{ backgroundImage: `url(${pattern})`, backgroundSize: '320px' }}
-      />
-      <div
-        className="absolute inset-0 hidden md:block"
-        style={{ background: 'radial-gradient(ellipse 40% 70% at 68% 52%, rgba(167,74,56,0.38), transparent 70%)' }}
-      />
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src={video} type="video/mp4" />
+      </video>
+      {/* darken the video so the title stays readable over it */}
+      <div className="absolute inset-0 bg-black/60" />
 
-      <div className="relative h-full max-w-[68rem] mx-auto md:px-6 flex items-center justify-center md:gap-20 lg:gap-28">
-        <div className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left px-6 md:px-0 max-w-md opacity-0 animate-[fade-up_0.8s_ease-out_0.1s_forwards]">
-          <p className="text-xs md:text-sm font-semibold tracking-[0.35em] mb-3" style={{ color: PEACH }}>
-            UNSWMSA
-          </p>
-          <h1
-            className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-wide leading-none bg-clip-text text-transparent"
-            style={{ backgroundImage: 'linear-gradient(180deg, #F6F1E8 35%, #E3B3A0 100%)' }}
+      <div className="relative h-full flex flex-col items-center justify-center text-center px-6 opacity-0 animate-[fade-up_0.8s_ease-out_0.1s_forwards]">
+        <p className="text-xs font-semibold tracking-[0.35em] mb-2" style={{ color: PEACH }}>
+          UNSWMSA
+        </p>
+        <h1
+          className="text-4xl md:text-5xl font-bold tracking-wide leading-none bg-clip-text text-transparent"
+          style={{ backgroundImage: 'linear-gradient(180deg, #F6F1E8 35%, #E3B3A0 100%)' }}
+        >
+          EVENTS
+        </h1>
+        <p className="mt-3 max-w-md text-sm md:text-base text-white/75 leading-relaxed">
+          Halaqahs, sports, socials and more, all year round. Come along, bring a friend.
+        </p>
+
+        {/* same style as the home page's "read more" button */}
+        {nextEvent && (
+          <button
+            onClick={onOpenNext}
+            className="mt-5 inline-block max-w-full truncate text-white text-sm px-4 py-1.5 rounded-full whitespace-nowrap hover:opacity-85 transition-opacity"
+            style={{ backgroundColor: TERRACOTTA }}
           >
-            EVENTS
-          </h1>
-          <p className="mt-4 text-sm md:text-base text-white/75 leading-relaxed">
-            Halaqahs, sports, socials and more, all year round. Come along, bring a friend.
-          </p>
-
-          {nextEvent && (
-            <div className="mt-6">
-              <button
-                onClick={onOpenNext}
-                className="group inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-4 py-2 text-xs md:text-sm text-white hover:bg-white/10 transition-colors"
-              >
-                <span className="font-semibold" style={{ color: PEACH }}>Next up</span>
-                <span className="text-white/40">|</span>
-                <span>
-                  {nextEvent.name}
-                  <span className="text-white/60"> · {countdown(nextEvent.date)}</span>
-                </span>
-                <span className="transition-transform group-hover:translate-x-0.5">→</span>
-              </button>
-            </div>
-          )}
-        </div>
-
-        <div className="absolute inset-0 md:relative md:inset-auto">
-          <div className="relative w-full h-full bg-black md:w-auto md:h-[26rem] md:aspect-[9/16] md:rounded-2xl md:overflow-hidden md:ring-1 md:ring-white/15 md:shadow-[0_24px_60px_rgba(0,0,0,0.6)]">
-            <video
-              ref={videoRef}
-              className="w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src={video} type="video/mp4" />
-            </video>
-            {/* darken the video on phones so the title stays readable over it */}
-            <div className="absolute inset-0 bg-black/60 md:hidden" />
-            <button
-              onClick={toggleMute}
-              aria-label={muted ? 'Unmute video' : 'Mute video'}
-              className="absolute top-3 right-3 md:top-auto md:bottom-3 z-10 bg-black/60 rounded-full p-2 hover:bg-black/80 transition-colors"
-            >
-              <Icon icon={muted ? 'ph:speaker-slash-fill' : 'ph:speaker-high-fill'} className="w-5 h-5 text-white" />
-            </button>
-          </div>
-        </div>
+            Next up: {nextEvent.name} · {countdown(nextEvent.date)} →
+          </button>
+        )}
       </div>
+
+      <button
+        onClick={toggleMute}
+        aria-label={muted ? 'Unmute video' : 'Mute video'}
+        className="absolute top-3 right-3 md:top-auto md:bottom-4 md:right-4 z-10 bg-black/60 rounded-full p-2 hover:bg-black/80 transition-colors"
+      >
+        <Icon icon={muted ? 'ph:speaker-slash-fill' : 'ph:speaker-high-fill'} className="w-5 h-5 text-white" />
+      </button>
     </div>
   );
 };
@@ -176,7 +154,7 @@ export const EventCard = ({ event, upcoming = false, onOpen }) => {
         className="w-full flex-1 flex flex-col items-center text-center text-white px-3 pt-2.5 pb-2.5"
         style={{ backgroundColor: MAROON }}
       >
-        <h3 className="font-bold text-base md:text-lg leading-snug line-clamp-2">{event.name}</h3>
+        <h3 className="font-bold text-sm sm:text-base md:text-lg leading-snug line-clamp-2">{event.name}</h3>
         <p className="text-xs mt-0.5 mb-2.5 max-w-[16rem] line-clamp-2 text-white/85">{event.description}</p>
         <span
           className={`mt-auto text-xs font-bold rounded-full px-4 py-1 transition-colors ${
@@ -246,7 +224,7 @@ export const EventCarousel = ({ events, showDots = false, upcoming = false, onOp
           {events.map((event) => (
             <div
               key={event.id}
-              className="snap-start shrink-0 w-[78%] sm:w-[calc((100%-3rem)/3)] lg:w-[calc((100%-4.5rem)/4)]"
+              className="snap-start shrink-0 w-[62%] sm:w-[calc((100%-3rem)/3)] lg:w-[calc((100%-4.5rem)/4)]"
             >
               <EventCard event={event} upcoming={upcoming} onOpen={onOpen} />
             </div>

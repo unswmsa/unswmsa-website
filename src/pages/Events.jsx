@@ -2,7 +2,6 @@ import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import recapVideo from '../assets/shared/intro-video.mp4';
 import gradient from '../assets/shared/gradient.png';
-import pattern from '../assets/shared/background.png';
 import snapshot from '../data/eventsSnapshot.json';
 import { fetchMsaEvents } from '../lib/rubric';
 import { getUpcomingEvents, groupPastEvents, getCalendarEvents, filterByAudience } from '../lib/events';
@@ -65,7 +64,6 @@ function Events() {
       <EventsHero
         video={recapVideo}
         background={gradient}
-        pattern={pattern}
         nextEvent={nextEvent}
         onOpenNext={() => openUpcoming(nextEvent)}
       />
