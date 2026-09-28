@@ -51,16 +51,16 @@ export const EventsHero = ({ video, background, nextEvent, onOpenNext }) => {
       <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative h-full flex flex-col items-center justify-center text-center px-6 opacity-0 animate-[fade-up_0.8s_ease-out_0.1s_forwards]">
-        <p className="text-xs font-semibold tracking-[0.35em] mb-2" style={{ color: PEACH }}>
+        <p className="text-xs md:text-sm font-semibold tracking-[0.35em] mb-2 md:mb-3" style={{ color: PEACH }}>
           UNSWMSA
         </p>
         <h1
-          className="text-4xl md:text-5xl font-bold tracking-wide leading-none bg-clip-text text-transparent"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-wide leading-none bg-clip-text text-transparent"
           style={{ backgroundImage: 'linear-gradient(180deg, #F6F1E8 35%, #E3B3A0 100%)' }}
         >
           EVENTS
         </h1>
-        <p className="mt-3 max-w-md text-sm md:text-base text-white/75 leading-relaxed">
+        <p className="mt-3 md:mt-4 max-w-md md:max-w-xl text-sm md:text-lg text-white/75 leading-relaxed">
           Halaqahs, sports, socials and more, all year round. Come along, bring a friend.
         </p>
 

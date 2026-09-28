@@ -8,6 +8,7 @@ import { getUpcomingEvents, groupPastEvents, getCalendarEvents, filterByAudience
 import { RevealSection } from '../components/about/AboutComponents';
 import EventModal from '../components/events/EventModal';
 import EventCalendar from '../components/events/EventCalendar';
+import FeaturedEvents from '../components/events/FeaturedEvents';
 import {
   MAROON,
   EventsHero,
@@ -79,8 +80,11 @@ function Events() {
           </SectionHeading>
           {view === 'calendar' ? (
             <EventCalendar events={calendarEvents} onOpen={openFromCalendar} />
-          ) : upcomingEvents.length > 0 ? (
+          ) : upcomingEvents.length > 2 ? (
             <EventCarousel key={audience} events={upcomingEvents} showDots upcoming onOpen={openUpcoming} />
+          ) : upcomingEvents.length > 0 ? (
+            // only 1-2 coming up: show them as wide featured cards so the section isn't mostly empty
+            <FeaturedEvents events={upcomingEvents} onOpen={openUpcoming} />
           ) : (
             <p className="text-center py-10" style={{ color: MAROON }}>
               No upcoming {audience === 'everyone' ? '' : `${audience}' `}events right now. Follow{' '}
