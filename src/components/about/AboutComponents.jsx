@@ -241,7 +241,7 @@ export const ServiceCard = ({ service }) => (
   </div>
 );
 
-export const RevealSection = ({ children }) => {
+export const RevealSection = ({ children, sectionName }) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState(typeof IntersectionObserver === 'undefined');
 
@@ -262,6 +262,7 @@ export const RevealSection = ({ children }) => {
 
   return (
     <div
+      id={sectionName}
       ref={ref}
       className={visible ? 'opacity-100 animate-[fade-up_0.7s_ease-out_forwards]' : 'opacity-0'}
     >

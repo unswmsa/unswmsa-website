@@ -26,6 +26,7 @@ function Home() {
     {showLoading && <Loading onFinish={() => setShowLoading(false)} />}
     <section className="home-page">
       <div
+        id="overview"
         className="relative flex flex-col items-center justify-start text-center px-4 pt-24 pb-24"
         style={{
           backgroundColor: '#1a1a1a',
@@ -70,7 +71,7 @@ function Home() {
       </div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-10">
-      <div>
+      <div id="latest">
         <h3
           className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
           style={{ borderColor: TERRACOTTA }}
@@ -167,7 +168,7 @@ function Home() {
         <hr className="border-gray-400 mt-8" />
       </div>
 
-      <div
+      <div id="musalla"
         className="mx-10 mb-10 rounded-2xl p-8 flex flex-col md:flex-row justify-between items-center gap-8 text-white max-w-6xl md:mx-auto"
         style={{
           backgroundImage: `url(${gradient})`,

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
+import { HashLink } from 'react-router-hash-link';
 
 const SocialLink = ({ href, icon }) => (
   <a 
@@ -51,12 +52,13 @@ const SectionLink = ({ pageName, section }) => {
     .replace(/&/g, 'and')
     .replace(/\s+/g, '-');
   return (
-    <Link
+    <HashLink
+      smooth
       to={`${quickLinks[pageName]}#${sectionSlug}`}
       className="text-sm hover:text-[#A74A38] transition-colors"
     >
       {section}
-    </Link>
+    </HashLink>
   );
 };
 
