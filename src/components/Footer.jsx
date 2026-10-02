@@ -86,7 +86,7 @@ const Footer = () => {
     <footer className="bg-msa-black text-white font-inter z-50">      
       <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-6 md:gap-y-10">
 
-        <PageLinks pageName="Home" sections={["Overview", "Latest", "Musallah"]} />
+        <PageLinks pageName="Home" sections={["Overview", "Latest", "Musalla"]} />
         <PageLinks pageName="About" sections={["About us", "Services", "Meet the Team"]} />
         <PageLinks pageName="Events" sections={["Overview", "Upcoming", "Archive"]} />
         <PageLinks pageName="Sponsors" sections={[ "Benefits", "Tiers", "View Prospectus"]} />

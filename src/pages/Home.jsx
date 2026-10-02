@@ -176,7 +176,7 @@ function Home() {
         }}
       >
         <div className="flex-1">
-          <h3 className="text-3xl font-bold mb-4">Musallah Location</h3>
+          <h3 className="text-3xl font-bold mb-4">Musalla Location</h3>
           <div className="space-y-4 text-base pr-8">
             <p className="flex items-center gap-3">
               <Icon icon="ph:map-pin" className="w-5 h-5" /> AGSM Room 105
@@ -190,7 +190,7 @@ function Home() {
         <div className="w-full md:w-72 shrink-0 rounded-xl overflow-hidden shadow-md">
           <iframe
             src="https://use.mazemap.com/embed.html#v=1&zlevel=8&center=151.235670,-33.918234&zoom=18&campusid=111&sharepoitype=identifier&sharepoi=KENC~G27~L1~105&utm_medium=iframe"
-            title="Musallah location map"
+            title="Musalla location map"
             className="w-full h-48 border-0"
             loading="lazy"
             allow="geolocation"
