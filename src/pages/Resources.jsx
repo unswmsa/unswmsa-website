@@ -11,8 +11,8 @@ function Resources() {
       </div>
 
       <RevealSection>
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="max-w-[776px] mx-auto space-y-6">
+        <div className="max-w-6xl mx-auto px-6 py-8 sm:py-16">
+          <div className="max-w-[776px] mx-auto space-y-4 sm:space-y-6">
             {resources.map((r) => (
               <ResourceCard key={r.title} resource={r} />
             ))}
@@ -26,7 +26,9 @@ function Resources() {
           <hr className="border-t-2 mb-16" style={{ borderColor: TERRACOTTA }} />
 
           <DuaCarousel items={duas} size="small" />
+          {/* Not deploying yet: the big dhikr card
           <DuaCarousel items={dhikr} size="large" />
+          */}
         </div>
       </RevealSection>
     </section>

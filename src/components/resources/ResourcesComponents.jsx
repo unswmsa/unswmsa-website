@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import { TERRACOTTA, MAROON } from '../about/AboutComponents';
 import bookmark from '../../assets/resources/bookmark.png';
@@ -7,49 +7,97 @@ import bookmark from '../../assets/resources/bookmark.png';
 const BUTTON_RED = '#A43522';
 const PILL_RED = '#B4432A';
 const TRANSLATION_RED = '#AC3724';
-const DOT_INACTIVE = '#c9a89a'; // same as About's carousel
+const DOT_INACTIVE = '#c9a89a';
 const ELEVATION = '0 8px 12px 6px rgba(0,0,0,0.15), 0 4px 4px rgba(0,0,0,0.3)';
-const HEADING_FONT = "'League Spartan', sans-serif"; // copy the exact name from index.css
+
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' ? window.innerWidth < 640 : false
+  );
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 640);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return isMobile;
+};
 
 /* ---------- resource cards (bookmarks)---------- */
-export const ResourceCard = ({ resource }) => (
-  <div
-    className="relative w-full min-h-[150px] flex items-start hover:scale-[1.02] transition-transform duration-300"
-    style={{
-      backgroundImage: `url(${bookmark})`,
-      backgroundSize: '100% 100%',
-      backgroundRepeat: 'no-repeat',
-    }}
-  >
-    {/* empty space so content starts after the rug */}
-    <div className="w-[24%] shrink-0" />
-
-    <div className="flex-1 pl-[4%] pr-6 pt-8 pb-14 sm:pb-4">
-      <div className="max-w-[20rem]">
-        <h3 className="font-bold text-lg leading-tight">{resource.title}</h3>
-        <p className="text-xs text-gray-900 whitespace-pre-line mt-1">
-          {resource.description}
-        </p>
-      </div>
-    </div>
-
-    <a
-      href={resource.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group absolute bottom-4 right-5 text-white text-xs font-bold px-5 py-2 rounded-[13px] shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:brightness-90"
-      style={{ backgroundColor: BUTTON_RED }}
+export const ResourceCard = ({ resource }) => {
+	const buttonBase =
+		'text-white text-[9px] sm:text-xs font-bold px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-[8px] sm:rounded-[13px] shadow-md';
+  return (
+    <div
+      className="relative w-full min-h-[96px] sm:min-h-[150px] flex items-start hover:scale-[1.02] transition-transform duration-300"
+      style={{
+        backgroundImage: `url(${bookmark})`,
+        backgroundSize: '100% 100%',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
-      view resource{' '}
-      <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
-        →
-      </span>
-    </a>
-  </div>
-);
+      {/* empty space so content starts after the rug */}
+      <div className="w-[22%] sm:w-[24%] shrink-0" />
+
+      <div className="flex-1 pl-[3%] sm:pl-[4%] pr-3 sm:pr-6 py-3 sm:pt-8 sm:pb-4">
+        <div className="max-w-[20rem]">
+          <h3 className="font-bold text-sm sm:text-lg leading-tight">{resource.title}</h3>
+          <p className="text-[11px] leading-snug sm:text-xs text-gray-900 whitespace-pre-line mt-0.5 sm:mt-1">
+            {resource.description}
+          </p>
+        </div>
+
+        {/* phone: button sits right under the text */}
+        <div className="flex justify-end mt-2 sm:hidden">
+          {resource.comingSoon ? (
+            <span
+              className={`${buttonBase} cursor-default select-none`}
+              style={{ backgroundColor: BUTTON_RED }}
+            >
+              coming soon
+            </span>
+          ) : (
+						<a
+							href={resource.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							className={buttonBase}
+							style={{ backgroundColor: BUTTON_RED }}
+						>
+							view →
+						</a>
+          )}
+        </div>
+      </div>
+
+      {/* button pinned to the bottom right corner */}
+      {resource.comingSoon ? (
+        <span
+          className={`hidden sm:block absolute bottom-4 right-5 ${buttonBase} cursor-default select-none`}
+          style={{ backgroundColor: BUTTON_RED }}
+        >
+          coming soon
+        </span>
+      ) : (
+        <a
+          href={resource.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`group hidden sm:block absolute bottom-4 right-5 ${buttonBase} transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:brightness-90`}
+          style={{ backgroundColor: BUTTON_RED }}
+        >
+          view resource{' '}
+          <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+            →
+          </span>
+        </a>
+      )}
+    </div>
+  );
+};
 
 /* ---------- duas & dhikr ---------- */
-
 const SIZES = {
 	small: {
 		wrapper: 'max-w-[640px]',
@@ -59,7 +107,7 @@ const SIZES = {
 		title: 'text-[clamp(1.25rem,2.4vw,1.625rem)] leading-[1.2] mb-3',
 		titleColor: undefined,
 		pill: 'rounded-[40px] w-[88%] px-4 py-4 mb-4',
-		pillColor: PILL_RED,
+		pillColor: BUTTON_RED,
 		arabic: 'text-[clamp(1rem,1.7vw,1.25rem)] leading-[1.7]',
 		translit: 'text-[clamp(0.8125rem,1.3vw,1rem)] leading-[1.5] mb-2',
 		translation: 'text-[clamp(0.8125rem,1.3vw,1rem)] leading-[1.6] font-medium',
@@ -79,7 +127,7 @@ const SIZES = {
 	},
 };
 
-//  bold **x** text
+//  bold the text
 const renderBold = (text) =>
   text.split('**').map((part, i) =>
     i % 2 === 1 ? <strong key={i} className="font-bold">{part}</strong> : part
@@ -116,6 +164,7 @@ const DuaCard = ({ dua, size }) => {
           <p dir="rtl" lang="ar" className={s.arabic}>
             {dua.arabic}
           </p>
+					
         </div>
 
         <p className={`font-semibold ${s.translit}`} style={{ color: MAROON }}>
@@ -166,52 +215,77 @@ const Arrow = ({ direction, onClick, position }) => (
 );
 
 export const DuaCarousel = ({ items, size = 'small' }) => {
+  const isMobile = useIsMobile();
   const [index, setIndex] = useState(0);
   const s = SIZES[size];
 
   const goPrev = () => setIndex((i) => (i - 1 + items.length) % items.length);
   const goNext = () => setIndex((i) => (i + 1) % items.length);
 
+  const dots = (
+    <div className="flex justify-center gap-2">
+      {items.map((_, i) => (
+        <button
+          key={i}
+          onClick={() => setIndex(i)}
+          aria-label={`Go to slide ${i + 1}`}
+          className="w-3 h-3 rounded-full"
+          style={{ backgroundColor: i === index ? MAROON : DOT_INACTIVE }}
+        />
+      ))}
+    </div>
+  );
+
+  if (isMobile) {
+    return (
+      <div className="mb-10">
+        <div className="px-1 pb-2">
+          <div key={index} className="animate-[fade-up_0.5s_ease-out]">
+            <DuaCard dua={items[index]} size={size} />
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center gap-6 mt-6">
+          <button onClick={goPrev} aria-label="Previous" className="active:scale-90 transition-transform">
+            <Icon icon="ph:caret-left-bold" className="w-8 h-8" style={{ color: TERRACOTTA }} />
+          </button>
+          {dots}
+          <button onClick={goNext} aria-label="Next" className="active:scale-90 transition-transform">
+            <Icon icon="ph:caret-right-bold" className="w-8 h-8" style={{ color: TERRACOTTA }} />
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="mb-16">
       <div className={`relative mx-auto px-10 lg:px-0 ${s.wrapper}`}>
         <Arrow direction="left" onClick={goPrev} position={`left-0 ${s.arrowL}`} />
 
-        {/* overflow-hidden clips the neighbouring cards; the pb/-mb keeps the shadow visible */}
         <div className="overflow-hidden px-3 -mx-3 pb-6 -mb-6 pt-1">
           <div
             className="flex items-stretch transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
-
             {items.map((item, i) => (
-							<div
-									key={i}
-									aria-hidden={i !== index}
-									className={`w-full shrink-0 px-3 flex transition-opacity duration-500 ${
-									i === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
-									}`}
-							>
-									<DuaCard dua={item} size={size} />
-							</div>
-						))}
+              <div
+                key={i}
+                aria-hidden={i !== index}
+                className={`w-full shrink-0 px-3 flex transition-opacity duration-500 ${
+                  i === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                }`}
+              >
+                <DuaCard dua={item} size={size} />
+              </div>
+            ))}
           </div>
         </div>
 
         <Arrow direction="right" onClick={goNext} position={`right-0 ${s.arrowR}`} />
       </div>
 
-      <div className="flex justify-center gap-2 mt-8">
-        {items.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            aria-label={`Go to slide ${i + 1}`}
-            className="w-3 h-3 rounded-full"
-            style={{ backgroundColor: i === index ? MAROON : DOT_INACTIVE }}
-          />
-        ))}
-      </div>
+      <div className="mt-8">{dots}</div>
     </div>
   );
 };

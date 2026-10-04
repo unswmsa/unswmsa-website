@@ -1,38 +1,34 @@
 
-
 export const resources = [
   {
     title: 'Dawah Guide',
-    description: 'this guide goes over x y z\nit is x y z\nit is x y z',
+    description:
+      "Where to start with dawah and what to learn next, all in one hub",
     href: 'https://lovely-catmint-be1.notion.site/dawah-resource-hub',
   },
   {
     title: 'Halal Food Map',
-    description: 'halal food places near campus, with certification status',
-    href: '#',
+    description:
+      'Halal places near campus, with their certification status and our membership deals',
+    href: '/resources/halal-food-map.png',
   },
   {
     title: 'Uni Survival Guide',
-    description: 'first year guide and uni advice :)',
+    description: 'A first year guide with uni advice, tips and everything you need to settle in',
     href: 'https://www.canva.com/design/DAG97KI5j1E/EPjuxSI6sHtxHs-xY11UzQ/view?utm_content=DAG97KI5j1E&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5e3e7b5489',
   },
   {
-    title: "MSA Series' Notes",
-    description: 'Names of Allah, Fiqh of Fasting & Tafsir Notes, T3 Root Classes',
-    href: '#',
-  },
-  {
-    title: 'Event Lecture Notes',
-    description: 'recap for the educational events you have missed',
-    href: '#',
+    title: 'MSA Series & Lecture Notes',
+    description:
+      'Names of Allah, Fiqh of Fasting & Tafsir Notes, T3 Root Classes, and recaps of educational events you have missed',
+    comingSoon: true,
   },
   {
     title: 'Voices of the Ummah',
-    description: 'initiatives to raise awareness for the ummah struggling around the world',
-    href: '#',
+    description: 'An ongoign initiative to raise awareness for the ummah struggling around the world',
+    comingSoon: true,
   },
 ];
-
 
 export const duas = [
   {
@@ -50,13 +46,6 @@ export const duas = [
     more: "Sahih Ibn Hibban (no. 2427), Hisn al-Muslim (no. 139)",
   },
   {
-    title: 'Laziness',
-    arabic: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',
-    transliteration: 'La hawla wa la quwwata illa billah',
-    translation: '"There is no power and no strength except with Allah."',
-    more: 'Sahih al-Bukhari 6384 / Sahih Muslim 2704',
-  },
-  {
     title: 'Knowledge',
     arabic: 'رَبِّ زِدْنِي عِلْمًا',
     transliteration: "Rabbi zidni 'ilma",
@@ -69,6 +58,13 @@ export const duas = [
     transliteration: "Rabbi ishrah li sadri wa yassir li amri wahlul 'uqdatan min lisani yafqahu qawli",
     translation: '"My Lord, open my heart, make my task easy for me, and loosen the knot from my tongue, so they may understand my speech."',
     more: 'Surah Ta-Ha 20:25-28',
+  },
+  {
+    title: 'Laziness',
+    arabic: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',
+    transliteration: 'La hawla wa la quwwata illa billah',
+    translation: '"There is no power and no strength except with Allah."',
+    more: 'Sahih al-Bukhari 6384 / Sahih Muslim 2704',
   },
   {
     title: 'For when you expect difficulty, remind yourself that...',
@@ -85,7 +81,7 @@ export const duas = [
     more: 'Surah Al Baqarah 2:32',
   },
   {
-    title: 'All rounder',
+    title: 'All Rounder',
     arabic: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا وَرِزْقًا طَيِّبًا وَعَمَلًا مُتَقَبَّلًا',
     transliteration: "Allāhumma innī as'aluka 'ilman nāfi'an, wa rizqan ṭayyiban, wa 'amalam-mutaqabbalan",
     translation: '"O Allah, I ask You for knowledge which is beneficial, and sustenance which is good, and deeds which are acceptable."',
