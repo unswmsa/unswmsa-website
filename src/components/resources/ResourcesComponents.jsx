@@ -25,13 +25,12 @@ const useIsMobile = () => {
 /* ---------- resource cards (bookmarks)---------- */
 export const ResourceCard = ({ resource }) => {
   const buttonBase =
-    'text-white text-[9px] sm:text-sm font-bold px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-[8px] sm:rounded-[13px] shadow-md';
+    'text-white text-xs sm:text-sm font-bold px-3 py-1 sm:px-5 sm:py-2 rounded-[10px] sm:rounded-[13px] shadow-md';
   const comingSoonBase =
-    'text-[9px] sm:text-sm font-bold px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-full border-2 bg-white/40 cursor-default select-none';
-
+    'text-xs sm:text-sm font-bold px-3 py-1 sm:px-5 sm:py-2 rounded-full border-2 bg-white/40 cursor-default select-none';
   return (
     <div
-      className="relative w-full min-h-[96px] sm:min-h-[150px] flex items-start hover:scale-[1.02] transition-transform duration-300"
+      className="relative w-full min-h-[110px] sm:min-h-[150px] flex items-start hover:scale-[1.02] transition-transform duration-300"
       style={{
         backgroundImage: `url(${bookmark})`,
         backgroundSize: '100% 100%',
@@ -42,8 +41,8 @@ export const ResourceCard = ({ resource }) => {
 
       <div className="flex-1 pl-[3%] sm:pl-[4%] pr-3 sm:pr-6 py-3 sm:pt-8 sm:pb-4">
         <div>
-          <h3 className="font-bold text-sm sm:text-lg leading-tight">{resource.title}</h3>
-          <p className="text-[11px] leading-snug sm:text-base sm:leading-snug sm:pr-40 text-gray-900 whitespace-pre-line mt-0.5 sm:mt-2">
+          <h3 className="font-bold text-base sm:text-lg leading-tight">{resource.title}</h3>
+          <p className="text-[13px] leading-snug sm:text-base sm:leading-snug sm:pr-40 text-gray-900 whitespace-pre-line mt-0.5 sm:mt-2">
             {resource.description}
           </p>
         </div>
