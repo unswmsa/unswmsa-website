@@ -27,6 +27,7 @@ function Home() {
     {showLoading && <Loading onFinish={() => setShowLoading(false)} />}
     <section className="home-page">
       <div
+        id="overview"
         className="relative flex flex-col items-center justify-start text-center px-4 pt-24 pb-24"
         style={{
           backgroundColor: '#1a1a1a',
@@ -74,7 +75,7 @@ function Home() {
       </div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-10">
-      <div>
+      <div id="latest">
         <h3
           className="text-[#A74A38] font-bold text-xl border-b-2 mb-4 pb-2 inline-block"
           style={{ borderColor: TERRACOTTA }}
@@ -171,7 +172,7 @@ function Home() {
         <hr className="border-gray-400 mt-8" />
       </div>
 
-      <div
+      <div id="musalla"
         className="mx-10 mb-10 rounded-2xl p-8 flex flex-col md:flex-row justify-between items-center gap-8 text-white max-w-6xl md:mx-auto"
         style={{
           backgroundImage: `url(${gradient})`,
@@ -180,7 +181,7 @@ function Home() {
         }}
       >
         <div className="flex-1">
-          <h3 className="text-3xl font-bold mb-4">Musallah Location</h3>
+          <h3 className="text-3xl font-bold mb-4">Musalla Location</h3>
           <div className="space-y-4 text-base pr-8">
             <p className="flex items-center gap-3">
               <Icon icon="ph:map-pin" className="w-5 h-5" /> AGSM Room 105
@@ -194,7 +195,7 @@ function Home() {
         <div className="w-full md:w-72 shrink-0 rounded-xl overflow-hidden shadow-md">
           <iframe
             src="https://use.mazemap.com/embed.html#v=1&zlevel=8&center=151.235670,-33.918234&zoom=18&campusid=111&sharepoitype=identifier&sharepoi=KENC~G27~L1~105&utm_medium=iframe"
-            title="Musallah location map"
+            title="Musalla location map"
             className="w-full h-48 border-0"
             loading="lazy"
             allow="geolocation"

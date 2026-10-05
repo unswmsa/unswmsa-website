@@ -12,7 +12,7 @@ import {
 
 function About() {
   return (
-    <section className="home-page">
+    <section className="home-page" id="about-us">
       <div className="max-w-6xl mx-auto px-6 pt-10">
         <h1 className="text-3xl font-bold mb-2">About</h1>
         <hr className="border-t-2" style={{ borderColor: TERRACOTTA }} />
@@ -50,7 +50,7 @@ function About() {
         </div>
       </RevealSection>
 
-      <RevealSection>
+      <RevealSection sectionName="jummuah-timings">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <h2 className="text-3xl font-bold mb-2">Jumm'uah Timings</h2>
           <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
@@ -73,7 +73,7 @@ function About() {
         </div>
       </RevealSection>
 
-      <RevealSection>
+      <RevealSection sectionName="services">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <h2 className="text-3xl font-bold mb-2">Services</h2>
           <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
@@ -101,7 +101,7 @@ function About() {
         </div>
       </RevealSection>
 
-      <RevealSection>
+      <RevealSection sectionName="meet-the-team">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <h2 className="text-3xl font-bold mb-2">Meet the Shura</h2>
           <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />

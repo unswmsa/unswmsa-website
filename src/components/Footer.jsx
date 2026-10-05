@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
+import { HashLink } from 'react-router-hash-link';
 
 const SocialLink = ({ href, icon }) => (
   <a 
@@ -50,13 +51,26 @@ const SectionLink = ({ pageName, section }) => {
     .toLowerCase()
     .replace(/&/g, 'and')
     .replace(/\s+/g, '-');
+
+  if (sectionSlug === "view-prospectus") {
+    return (
+      <a
+        href="src/data/sponsors_prospectus.pdf"
+        target="_blank"
+        className="text-sm hover:text-[#A74A38] transition-colors"
+      >
+        {section}
+      </a>
+    );    
+  }
   return (
-    <Link
+    <HashLink
+      smooth
       to={`${quickLinks[pageName]}#${sectionSlug}`}
       className="text-sm hover:text-[#A74A38] transition-colors"
     >
       {section}
-    </Link>
+    </HashLink>
   );
 };
 
@@ -86,7 +100,7 @@ const Footer = () => {
     <footer className="bg-msa-black text-white font-inter z-50">      
       <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-6 md:gap-y-10">
 
-        <PageLinks pageName="Home" sections={["Overview", "Latest", "Musallah"]} />
+        <PageLinks pageName="Home" sections={["Overview", "Latest", "Musalla"]} />
         <PageLinks pageName="About" sections={["About us", "Services", "Meet the Team"]} />
         <PageLinks pageName="Events" sections={["Overview", "Upcoming", "Archive"]} />
         <PageLinks pageName="Sponsors" sections={[ "Benefits", "Tiers", "View Prospectus"]} />
