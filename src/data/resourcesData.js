@@ -27,7 +27,7 @@ export const resources = [
   },
   {
     title: 'Voices of the Ummah',
-    description: 'An ongoign initiative to raise awareness for the ummah struggling around the world',
+    description: 'An ongoing initiative to raise awareness for the ummah struggling around the world',
     comingSoon: true,
   },
 ];
