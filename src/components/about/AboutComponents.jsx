@@ -104,7 +104,7 @@ export const TeamCard = ({ member }) => {
 
 export const ExtShuraCard = ({ team }) => (
   <div
-    className="rounded-2xl p-6 w-[260px] h-[280px] shrink-0 hover:scale-[1.03] transition-transform duration-300 flex flex-col"
+    className="rounded-2xl p-6 w-[260px] min-h-[280px] h-full shrink-0 hover:scale-[1.03] transition-transform duration-300 flex flex-col"
     style={{ backgroundColor: TERRACOTTA }}
   >
     <div className="flex items-center gap-3 mb-4">
@@ -150,7 +150,7 @@ export const Carousel = ({ items, cardsPerView, renderItem, keyFn }) => {
           }}
         >
           {items.map((item, i) => (
-            <div key={keyFn(item, i)}>{renderItem(item)}</div>
+            <div key={keyFn(item, i)} className="flex">{renderItem(item)}</div>
           ))}
         </div>
       </div>

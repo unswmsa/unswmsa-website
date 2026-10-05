@@ -23,7 +23,7 @@ export const shuraMembers = [
   { name: 'Ryan Khan', role: 'MNC Lead', icon: 'ph:megaphone-fill', photo: mnc3, favourite: '"No thought, moment or step of yours escapes His regard, nor any of your moments of stillness or movement" - Imam Al-Ghazali' },
   { name: 'Maheen Noman', role: 'Events Lead', icon: 'ph:calendar-star-fill', photo: events1, favourite: 'Surah Baqarah Verse 152: “So remember me, and I will remember you” * Surah Baqarah Verse 286: “Allah does not burden a soul beyond that it can bear” * Surah Ash-Sharh Verse 5: “Verily, with hardship comes ease”' },
   { name: 'Saarang Ali', role: 'Events Lead', icon: 'ph:calendar-star-fill', photo: events2, favourite: 'Surah An-Najm' },
-  { name: 'Aisha Aiden', role: 'Dawah Lead', icon: 'ph:mosque-fill', photo: dawah2, favourite: 'Surah Yusuf' },
+  { name: 'Aisha Aden', role: 'Dawah Lead', icon: 'ph:mosque-fill', photo: dawah2, favourite: 'Surah Yusuf' },
   { name: 'Rayan Zubair', role: 'Dawah Lead', icon: 'ph:mosque-fill', photo: dawah1, favourite: '“And whoever is mindful of Allah, He will make a way out for them, and provide for them from sources they could never imagine. And whoever puts their trust in Allah, then He ˹alone˺ is sufficient for them. Certainly Allah achieves His Will. Allah has already set a destiny for everything.” - Surah At-Talaq Verses 2-3' },
   { name: 'Fariha Dean', role: 'Sponsorships Lead', icon: 'ph:handshake-fill', photo: sponsorships1, favourite: '“And strive for Allah with the striving due to Him. He has chosen you and has not placed upon you in the religion any difficulty…” - Surah Al-Hajj v78' },
   { name: 'Khaled Ahmed', role: 'Sponsorships Lead', icon: 'ph:handshake-fill', photo: sponsorships2, favourite: 'And [O Allah] do not disgrace me on the Day they are [all] resurrected – the Day when neither wealth nor children will be of any benefit, [except] for those who come before Allah with a sound heart. - Ash-Shu`ara 87-89' },
@@ -37,7 +37,7 @@ export const shuraMembers = [
 export const extShuraTeams = [
   { team: 'MNC', icon: 'ph:megaphone-fill', members: ['Hajara', 'Mariama', 'Noor', 'Aimen', 'Amina', 'Zobiya', 'Amira', 'Rosanna', 'Brix'] },
   { team: 'Events', icon: 'ph:calendar-star-fill', members: ['Tasneem', 'Nousha', 'Shazana', 'Nisa', 'Salih', 'Khalid', 'Tahir'] },
-  { team: 'Dawah', icon: 'ph:mosque-fill', members: ['Dua', 'Sara', 'Haneya', 'Rustom', 'Suhail'] },
+  { team: 'Dawah', icon: 'ph:mosque-fill', members: ['Dua', 'Sara', 'Haneya', 'Rustom', 'Suhail', 'Omar'] },
   { team: 'Sponsorships', icon: 'ph:handshake-fill', members: ['Zahra', 'Fariza', 'Bara'] },
   { team: 'Advocacy', icon: 'ph:megaphone-simple-fill', members: ['Aamina', 'Nadia', 'Mahmoud', 'Anhaar', 'Ahmed', 'Saavan'] },
   { team: 'Website', icon: 'ph:code-fill', members: ['Noor Babar (Lead)', 'Mahir Bhuiyan (Lead)', 'Ihsan Ahmad', 'Yumna Zaheed', 'Hajara Musthafa'] },
