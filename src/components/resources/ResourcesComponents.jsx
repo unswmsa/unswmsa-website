@@ -26,6 +26,8 @@ const useIsMobile = () => {
 export const ResourceCard = ({ resource }) => {
 	const buttonBase =
 		'text-white text-[9px] sm:text-xs font-bold px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-[8px] sm:rounded-[13px] shadow-md';
+  const comingSoonBase =
+  'text-[9px] sm:text-xs font-bold px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-full border-2 bg-white/40 cursor-default select-none';
   return (
     <div
       className="relative w-full min-h-[96px] sm:min-h-[150px] flex items-start hover:scale-[1.02] transition-transform duration-300"
@@ -48,12 +50,12 @@ export const ResourceCard = ({ resource }) => {
 
         <div className="flex justify-end mt-2 sm:hidden">
           {resource.comingSoon ? (
-            <span
-              className={`${buttonBase} cursor-default select-none`}
-              style={{ backgroundColor: BUTTON_RED }}
-            >
-              coming soon
-            </span>
+          <span
+            className={comingSoonBase}
+            style={{ borderColor: BUTTON_RED, color: BUTTON_RED }}
+          >
+            coming soon
+          </span>
           ) : (
 						<a
 							href={resource.href}
@@ -69,12 +71,12 @@ export const ResourceCard = ({ resource }) => {
       </div>
 
       {resource.comingSoon ? (
-        <span
-          className={`hidden sm:block absolute bottom-4 right-5 ${buttonBase} cursor-default select-none`}
-          style={{ backgroundColor: BUTTON_RED }}
-        >
-          coming soon
-        </span>
+      <span
+        className={`hidden sm:block absolute bottom-4 right-5 ${comingSoonBase}`}
+        style={{ borderColor: BUTTON_RED, color: BUTTON_RED }}
+      >
+        coming soon
+      </span>
       ) : (
         <a
           href={resource.href}
