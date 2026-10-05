@@ -22,7 +22,7 @@ export const resources = [
   {
     title: 'MSA Series & Lecture Notes',
     description:
-      'Names of Allah, Fiqh of Fasting & Tafsir Notes, T3 Root Classes, and recaps of educational events you have missed',
+      'Names of Allah, Fiqh of Fasting & Tafsir Notes, T3 Root Classes, and educational event recaps',
     comingSoon: true,
   },
   {

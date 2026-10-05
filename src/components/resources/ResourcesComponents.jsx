@@ -24,10 +24,11 @@ const useIsMobile = () => {
 
 /* ---------- resource cards (bookmarks)---------- */
 export const ResourceCard = ({ resource }) => {
-	const buttonBase =
-		'text-white text-[9px] sm:text-xs font-bold px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-[8px] sm:rounded-[13px] shadow-md';
+  const buttonBase =
+    'text-white text-[9px] sm:text-sm font-bold px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-[8px] sm:rounded-[13px] shadow-md';
   const comingSoonBase =
-  'text-[9px] sm:text-xs font-bold px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-full border-2 bg-white/40 cursor-default select-none';
+    'text-[9px] sm:text-sm font-bold px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-full border-2 bg-white/40 cursor-default select-none';
+
   return (
     <div
       className="relative w-full min-h-[96px] sm:min-h-[150px] flex items-start hover:scale-[1.02] transition-transform duration-300"
@@ -37,46 +38,45 @@ export const ResourceCard = ({ resource }) => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* empty space so content starts after the rug */}
       <div className="w-[22%] sm:w-[24%] shrink-0" />
 
       <div className="flex-1 pl-[3%] sm:pl-[4%] pr-3 sm:pr-6 py-3 sm:pt-8 sm:pb-4">
-        <div className="max-w-[20rem]">
-          <h3 className="font-bold text-sm sm:text-lg leading-tight">{resource.title}</h3>
-          <p className="text-[11px] leading-snug sm:text-xs text-gray-900 whitespace-pre-line mt-0.5 sm:mt-1">
+        <div>
+          <h3 className="font-bold text-sm sm:text-2xl leading-tight">{resource.title}</h3>
+          <p className="text-[11px] leading-snug sm:text-base sm:leading-snug sm:pr-40 text-gray-900 whitespace-pre-line mt-0.5 sm:mt-2">
             {resource.description}
           </p>
         </div>
 
         <div className="flex justify-end mt-2 sm:hidden">
           {resource.comingSoon ? (
-          <span
-            className={comingSoonBase}
-            style={{ borderColor: BUTTON_RED, color: BUTTON_RED }}
-          >
-            coming soon
-          </span>
+            <span
+              className={comingSoonBase}
+              style={{ borderColor: BUTTON_RED, color: BUTTON_RED }}
+            >
+              coming soon
+            </span>
           ) : (
-						<a
-							href={resource.href}
-							target="_blank"
-							rel="noopener noreferrer"
-							className={buttonBase}
-							style={{ backgroundColor: BUTTON_RED }}
-						>
-							view →
-						</a>
+            <a
+              href={resource.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={buttonBase}
+              style={{ backgroundColor: BUTTON_RED }}
+            >
+              view →
+            </a>
           )}
         </div>
       </div>
 
       {resource.comingSoon ? (
-      <span
-        className={`hidden sm:block absolute bottom-4 right-5 ${comingSoonBase}`}
-        style={{ borderColor: BUTTON_RED, color: BUTTON_RED }}
-      >
-        coming soon
-      </span>
+        <span
+          className={`hidden sm:block absolute bottom-4 right-5 ${comingSoonBase}`}
+          style={{ borderColor: BUTTON_RED, color: BUTTON_RED }}
+        >
+          coming soon
+        </span>
       ) : (
         <a
           href={resource.href}
