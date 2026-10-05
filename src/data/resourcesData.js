@@ -1,4 +1,6 @@
 
+import halalFoodMap from '../assets/resources/halal-food-map.png';
+
 export const resources = [
   {
     title: 'Dawah Guide',
@@ -10,7 +12,7 @@ export const resources = [
     title: 'Halal Food Map',
     description:
       'Halal places near campus, with their certification status and our membership deals',
-    href: '/resources/halal-food-map.png',
+    href: halalFoodMap,
   },
   {
     title: 'Uni Survival Guide',

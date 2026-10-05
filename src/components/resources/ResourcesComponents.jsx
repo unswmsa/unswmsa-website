@@ -3,9 +3,7 @@ import { Icon } from '@iconify/react';
 import { TERRACOTTA, MAROON } from '../about/AboutComponents';
 import bookmark from '../../assets/resources/bookmark.png';
 
-/* ---------- colours only used on this page (from Figma) ---------- */
 const BUTTON_RED = '#A43522';
-const PILL_RED = '#B4432A';
 const TRANSLATION_RED = '#AC3724';
 const DOT_INACTIVE = '#c9a89a';
 const ELEVATION = '0 8px 12px 6px rgba(0,0,0,0.15), 0 4px 4px rgba(0,0,0,0.3)';
@@ -48,7 +46,6 @@ export const ResourceCard = ({ resource }) => {
           </p>
         </div>
 
-        {/* phone: button sits right under the text */}
         <div className="flex justify-end mt-2 sm:hidden">
           {resource.comingSoon ? (
             <span
@@ -71,7 +68,6 @@ export const ResourceCard = ({ resource }) => {
         </div>
       </div>
 
-      {/* button pinned to the bottom right corner */}
       {resource.comingSoon ? (
         <span
           className={`hidden sm:block absolute bottom-4 right-5 ${buttonBase} cursor-default select-none`}
@@ -176,7 +172,6 @@ const DuaCard = ({ dua, size }) => {
         </p>
       </div>
 
-      {/* fix footer to bottom*/}
       {dua.more && (
         <div className="flex items-center justify-between gap-3 mt-2 min-h-[32px]">
           <p
@@ -237,12 +232,30 @@ export const DuaCarousel = ({ items, size = 'small' }) => {
   );
 
   if (isMobile) {
+    const handleTouchEnd = (e) => {
+      if (touchStartX.current === null) return;
+      const diff = e.changedTouches[0].clientX - touchStartX.current;
+      if (diff > 50) goPrev();
+      if (diff < -50) goNext();
+      touchStartX.current = null;
+    };
+
     return (
       <div className="mb-10">
-        <div className="px-1 pb-2">
-          <div key={index} className="animate-[fade-up_0.5s_ease-out]">
-            <DuaCard dua={items[index]} size={size} />
-          </div>
+        <div
+          className="grid px-1 pb-2"
+          onTouchStart={(e) => (touchStartX.current = e.touches[0].clientX)}
+          onTouchEnd={handleTouchEnd}
+        >
+          {items.map((item, i) => (
+            <div
+              key={i}
+              aria-hidden={i !== index}
+              className={`col-start-1 row-start-1 flex ${i === index ? 'visible' : 'invisible'}`}
+            >
+              <DuaCard dua={item} size={size} />
+            </div>
+          ))}
         </div>
 
         <div className="flex items-center justify-center gap-6 mt-6">
