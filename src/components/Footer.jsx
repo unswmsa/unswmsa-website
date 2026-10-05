@@ -51,6 +51,18 @@ const SectionLink = ({ pageName, section }) => {
     .toLowerCase()
     .replace(/&/g, 'and')
     .replace(/\s+/g, '-');
+
+  if (sectionSlug === "view-prospectus") {
+    return (
+      <a
+        href="src/data/sponsors_prospectus.pdf"
+        target="_blank"
+        className="text-sm hover:text-[#A74A38] transition-colors"
+      >
+        {section}
+      </a>
+    );    
+  }
   return (
     <HashLink
       smooth

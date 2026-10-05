@@ -45,6 +45,8 @@ export const BenefitCard = ({ benefit }) => (
 export const SponsorsStats = ({ stat, statInfo }) => (
   <div className="flex items-center flex-col gap-2 font-[League_Spartan]">
     <h3 className="font-semibold text-[#EAE6DB] text-2xl text-center">{stat}</h3>
-    <p className="font-medium text-white text-xl text-center">{statInfo}</p>
+    <p className="font-medium text-white text-xl text-center text-balance max-w-[14ch]">
+      {statInfo}
+    </p>
   </div>
 );

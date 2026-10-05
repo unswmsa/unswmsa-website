@@ -60,7 +60,7 @@ function Sponsors() {
         >
             <p className="text-xl font-semibold">VIEW OUR PROSPECTUS TO LEARN MORE ABOUT THE DETAILS</p>
             <a 
-              href="#" 
+              href="src/data/sponsors_prospectus.pdf" 
               target="_blank" 
               className="group bg-[#9D2320] text-sm text-white text-center
                         rounded-4xl px-4 py-1.5 shadow-[0_4px_3px_0px_rgba(0,0,0,0.25)]
