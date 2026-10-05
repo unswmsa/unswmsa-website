@@ -19,6 +19,8 @@ import {
   SponsorsStats
 } from '../components/sponsors/SponsorsComponents';
 
+import quranBg from '../assets/home/quranbg.png';
+
 function Sponsors() {
   return (
     <section className="sponsors-page">
@@ -52,30 +54,6 @@ function Sponsors() {
        </div>
       </RevealSection>
 
-      <RevealSection sectionName="tiers">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <h2 className="text-3xl font-bold mb-2">Types of Sponsorship Tiers</h2>
-          <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
-        </div>
-
-        <div
-          className="mx-10 mb-10 rounded-4xl p-6 flex flex-col md:flex-row items-center justify-center gap-10 text-white max-w-6xl md:mx-auto bg-[#A74A38]"
-        >
-            <p className="text-xl font-semibold">VIEW OUR PROSPECTUS TO LEARN MORE ABOUT THE DETAILS</p>
-            <a 
-              href={prospectus}
-              target="_blank" 
-              className="group bg-[#9D2320] text-sm text-white text-center
-                        rounded-4xl px-4 py-1.5 shadow-[0_4px_3px_0px_rgba(0,0,0,0.25)]
-                        border-1-terracotta
-                        hover:text-msa-black hover:scale-[1.03] hover:bg-[#EAE6DB] transition-colors 
-                        w-fit"
-            >
-              view pdf &rarr;
-            </a>         
-        </div>
-      </RevealSection>
-
       <RevealSection>
         <div className="bg-msa-black text-white font-inter z-50">      
           <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 md:gap-y-10">
@@ -87,10 +65,58 @@ function Sponsors() {
         </div>
       </RevealSection>
 
+<RevealSection sectionName="tiers">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <h2 className="text-3xl font-bold mb-2">Sponsorship Tiers</h2>
+          <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
+
+          <div
+            className="rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 text-white"
+            style={{ backgroundColor: TERRACOTTA }}
+            >
+            <p className="text-lg font-semibold text-center md:text-left">
+              View our prospectus for the full details of each tier.
+            </p>
+            <a
+              href={prospectus}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-[#A74A38] text-sm font-bold px-5 py-2 rounded-full whitespace-nowrap hover:opacity-85 transition-opacity"
+            >
+              View PDF →
+            </a>
+          </div>
+        </div>
+      </RevealSection>
+
       <RevealSection>
-        <div className="max-w-2xl mx-auto px-6 py-16 text-center">
-          <p className="italic font-bold text-2xl mb-4" style={{ color: TERRACOTTA }}>This partnership also represents an opportunity to increase barakah in your business.</p>
-          <p className="italic text-gray-800">“Those who spend their wealth in charity day and night, secretly and openly—their reward is with their Lord, and there will be no fear for them, nor will they grieve. ” (Qur'an 2:274)</p>
+        <div
+          className="relative flex flex-col items-center text-center px-6 py-16 mb-16"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(${quranBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <p className="text-[#EAE6DB] max-w-3xl mb-6">
+            This partnership also represents an opportunity to increase barakah in your business.
+          </p>
+
+          <p
+            dir="rtl"
+            lang="ar"
+            className="text-white text-2xl md:text-3xl leading-[2.2] max-w-5xl mb-6"
+            style={{ fontFamily: "'Amiri Quran', serif" }}
+          >
+            ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُم بِٱلَّيْلِ وَٱلنَّهَارِ سِرًّا وَعَلَانِيَةً فَلَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ
+          </p>
+
+          <p className="text-white/90 italic max-w-3xl mb-4">
+            "Those who spend their wealth in charity day and night, secretly and openly—their reward is with their Lord, and there will be no fear for them, nor will they grieve."
+          </p>
+
+          <p className="text-white/60 text-sm">Surah Al-Baqarah, 2:274</p>
         </div>
       </RevealSection>
 
