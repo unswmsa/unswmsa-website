@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Icon } from '@iconify/react';
 import { TERRACOTTA, MAROON } from '../about/AboutComponents';
 import bookmark from '../../assets/resources/bookmark.png';
@@ -25,13 +25,12 @@ const useIsMobile = () => {
 /* ---------- resource cards (bookmarks)---------- */
 export const ResourceCard = ({ resource }) => {
   const buttonBase =
-    'text-white text-[9px] sm:text-sm font-bold px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-[8px] sm:rounded-[13px] shadow-md';
+    'text-white text-xs sm:text-sm font-bold px-3 py-1 sm:px-5 sm:py-2 rounded-[10px] sm:rounded-[13px] shadow-md';
   const comingSoonBase =
-    'text-[9px] sm:text-sm font-bold px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-full border-2 bg-white/40 cursor-default select-none';
-
+    'text-xs sm:text-sm font-bold px-3 py-1 sm:px-5 sm:py-2 rounded-full border-2 bg-white/40 cursor-default select-none';
   return (
     <div
-      className="relative w-full min-h-[96px] sm:min-h-[150px] flex items-start hover:scale-[1.02] transition-transform duration-300"
+      className="relative w-full min-h-[110px] sm:min-h-[150px] flex items-start hover:scale-[1.02] transition-transform duration-300"
       style={{
         backgroundImage: `url(${bookmark})`,
         backgroundSize: '100% 100%',
@@ -42,8 +41,8 @@ export const ResourceCard = ({ resource }) => {
 
       <div className="flex-1 pl-[3%] sm:pl-[4%] pr-3 sm:pr-6 py-3 sm:pt-8 sm:pb-4">
         <div>
-          <h3 className="font-bold text-sm sm:text-2xl leading-tight">{resource.title}</h3>
-          <p className="text-[11px] leading-snug sm:text-base sm:leading-snug sm:pr-40 text-gray-900 whitespace-pre-line mt-0.5 sm:mt-2">
+          <h3 className="font-bold text-base sm:text-lg leading-tight">{resource.title}</h3>
+          <p className="text-[13px] leading-snug sm:text-base sm:leading-snug sm:pr-40 text-gray-900 whitespace-pre-line mt-0.5 sm:mt-2">
             {resource.description}
           </p>
         </div>
@@ -102,11 +101,11 @@ const SIZES = {
 		arrowL: 'lg:-left-24',
 		arrowR: 'lg:-right-24',
 		card: 'rounded-[20px] px-[6%] pt-4 pb-3 flex flex-col sm:min-h-[440px]',
-		title: 'text-[clamp(1.25rem,2.4vw,1.625rem)] leading-[1.2] mb-3',
+    title: 'text-lg leading-[1.2] mb-3',
 		titleColor: undefined,
-		pill: 'rounded-[40px] w-[88%] px-4 py-4 mb-4',
+		pill: 'rounded-[40px] w-[88%] px-4 py-3 mb-4',
 		pillColor: BUTTON_RED,
-		arabic: 'text-[clamp(1rem,1.7vw,1.25rem)] leading-[1.7]',
+    arabic: 'text-[clamp(1.25rem,2.2vw,1.625rem)] leading-[2.2]',
 		translit: 'text-[clamp(0.8125rem,1.3vw,1rem)] leading-[1.5] mb-2',
 		translation: 'text-[clamp(0.8125rem,1.3vw,1rem)] leading-[1.6] font-medium',
 	},
@@ -117,9 +116,9 @@ const SIZES = {
 		card: 'rounded-[30px] px-4 sm:px-5 pt-3 pb-3 flex flex-col sm:min-h-[450px]',
 		title: 'text-[clamp(1rem,1.6vw,1.125rem)] mb-2',
 		titleColor: TRANSLATION_RED,
-		pill: 'rounded-[40px] px-6 py-4 mb-4',
+		pill: 'rounded-[40px] px-6 py-3 mb-4',
 		pillColor: TERRACOTTA,
-		arabic: 'text-[clamp(1rem,1.8vw,1.375rem)] leading-[1.6]',
+    arabic: 'text-[clamp(1.25rem,2.4vw,1.75rem)] leading-[2.2]',
 		translit: 'text-[clamp(0.75rem,1.2vw,0.875rem)] leading-[1.65] mb-3',
 		translation: 'text-[clamp(0.75rem,1.2vw,0.875rem)] leading-[1.65] font-semibold',
 	},
@@ -159,10 +158,9 @@ const DuaCard = ({ dua, size }) => {
           className={`text-white mx-auto flex items-center justify-center ${s.pill}`}
           style={{ backgroundColor: s.pillColor }}
         >
-          <p dir="rtl" lang="ar" className={s.arabic}>
+          <p dir="rtl" lang="ar" className={s.arabic} style={{ fontFamily: "'Amiri Quran', serif" }}>
             {dua.arabic}
           </p>
-					
         </div>
 
         <p className={`font-semibold ${s.translit}`} style={{ color: MAROON }}>
@@ -214,6 +212,7 @@ const Arrow = ({ direction, onClick, position }) => (
 export const DuaCarousel = ({ items, size = 'small' }) => {
   const isMobile = useIsMobile();
   const [index, setIndex] = useState(0);
+  const touchStartX = useRef(null);
   const s = SIZES[size];
 
   const goPrev = () => setIndex((i) => (i - 1 + items.length) % items.length);

@@ -31,16 +31,14 @@ export const SponsorsCard = ({ sponsor }) => (
   </div>
 );
 
-export const BenefitCard = ({ benefit }) => (
-  <div
-    className="rounded-4xl p-6 flex flex-col bg-[#EAE6DB] hover:scale-[1.03] transition-transform duration-300
-              border-terracotta border-2 shadow-[0_2px_5px_1px_rgba(144,46,39,0.3)] items-center justify-center"
-  >
-    <p className="text-msa-black font-bold text-md mb-2 whitespace-pre-line pt-2 text-center">
-      {benefit}
-    </p>
-  </div>
+export function BenefitCard({ benefit }) {
+  return (
+    <div className="flex items-start gap-3 py-4 md:py-5 border-b border-[#A74A38]/25">
+      <Icon icon="tabler:circle-check-filled" className="w-6 h-6 shrink-0 text-[#A74A38]" />
+      <p className="font-semibold text-gray-800">{benefit}</p>
+    </div>
 );
+}
 
 export const SponsorsStats = ({ stat, statInfo }) => (
   <div className="flex items-center flex-col gap-2 font-[League_Spartan]">

@@ -4,6 +4,7 @@ import gradient from '../assets/shared/gradient.png';
 import logo from '../assets/shared/logo.png';
 import substackCover from '../assets/home/substack.png';
 import introVideo from '../assets/shared/intro-video.mp4';
+import mrw from '../assets/home/mrw.mp4';
 import quranBg from '../assets/home/quranbg.png';
 import ayah from '../assets/home/ayah.png';
 import headstartLegal from '../assets/sponsors/headstartlegal.png';
@@ -119,9 +120,7 @@ function Home() {
             style={{ borderColor: TERRACOTTA }}
           > Term 3 Initiative: MRW
           </h3>
-          <div className="w-full h-64 rounded-lg bg-gray-200 flex items-center justify-center">
-            <p className="text-gray-400 font-medium">video coming soonnn</p>
-          </div>
+          <RecapVideo src={mrw} />
         </div>
       </div>
 

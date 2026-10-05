@@ -5,13 +5,13 @@ export const resources = [
   {
     title: 'Dawah Guide',
     description:
-      "Where to start with dawah and what to learn next, all in one hub",
+      'A guide to help you give dawah, and increase your knowledge! You can also join us every Wednesday at the dawah stalls',
     href: 'https://lovely-catmint-be1.notion.site/dawah-resource-hub',
   },
   {
     title: 'Halal Food Map',
     description:
-      'Halal places near campus, with their certification status and our membership deals',
+      'Halal food places near campus, with their certification status and our membership deals',
     href: halalFoodMap,
   },
   {
