@@ -56,7 +56,7 @@ function Sponsors() {
 
       <RevealSection>
         <div className="bg-msa-black text-white font-inter z-50">      
-          <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 md:gap-y-10">
+          <div className="max-w-6xl mx-auto px-6 py-10 md:py-12 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 md:gap-y-10">
             <SponsorsStats stat="500" statInfo="membership sign-ups in month one" />
             <SponsorsStats stat="5k+" statInfo="followers on Instagram" />
             <SponsorsStats stat="10,000" statInfo="accounts reached via social media" />

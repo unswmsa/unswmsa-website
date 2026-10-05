@@ -33,7 +33,7 @@ export const SponsorsCard = ({ sponsor }) => (
 
 export function BenefitCard({ benefit }) {
   return (
-    <div className="flex items-start gap-3 py-5 border-b border-[#A74A38]/25">
+    <div className="flex items-start gap-3 py-4 md:py-5 border-b border-[#A74A38]/25">
       <Icon icon="tabler:circle-check-filled" className="w-6 h-6 shrink-0 text-[#A74A38]" />
       <p className="font-semibold text-gray-800">{benefit}</p>
     </div>
