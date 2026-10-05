@@ -13,6 +13,7 @@ import { featureCards } from '../data/homeData';
 import { TERRACOTTA, TypingTagline, OutlineButton, FeatureCard } from '../components/home/HomeComponents';
 import Loading from '../components/Loading';
 import RecapVideo from '../components/RecapVideo';
+import HadithOfTheWeek from '../components/home/HadithOfTheWeek';
 
 const SUBSTACK_URL = 'https://unswmsa.substack.com/';
 const SUBSTACK_SUBSCRIBE_URL =
@@ -52,6 +53,9 @@ function Home() {
             Join Us Now
           </OutlineButton>
           <OutlineButton href="/about">About Us</OutlineButton>
+        </div>
+        <div className="w-full max-w-sm mt-10 lg:mt-0 lg:absolute lg:right-10 lg:top-1/2 lg:-translate-y-1/2 lg:w-72">
+          <HadithOfTheWeek />
         </div>
       </div>
 

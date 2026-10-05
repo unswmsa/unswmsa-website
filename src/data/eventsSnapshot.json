@@ -1,0 +1,525 @@
+{
+  "updatedAt": "2026-09-26T23:51:58.008Z",
+  "events": [
+    {
+      "id": 83820,
+      "name": "Sisters' Paint n' Sip",
+      "date": "2026-09-29T12:00",
+      "dateLabel": "Tue, 29 Sep 2026, 12.00 PM",
+      "location": "AGSM",
+      "image": "https://portal.hellorubric.com/assets/img/patterns/pattern_13.png",
+      "link": "https://campus.hellorubric.com/?eid=83820",
+      "price": "Free"
+    },
+    {
+      "id": 83449,
+      "name": "Sisters' Sports",
+      "date": "2026-10-01T13:00",
+      "dateLabel": "Thu, 1 Oct 2026, 1.00 PM",
+      "location": "UNSW Fitness & Aquatic Centre (B5)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/2de9edcc-445b-4837-a974-c05eb3db0bd4.png",
+      "link": "https://campus.hellorubric.com/?eid=83449",
+      "price": "Free"
+    },
+    {
+      "id": 83061,
+      "name": "Sisters' Weekly Halaqah",
+      "date": "2026-09-22T12:00",
+      "dateLabel": "Tue, 22 Sep 2026, 12.00 PM",
+      "location": "Biological Sciences Building North (D26)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/d17af458-ce43-40bd-bc64-fc47695b5278.png",
+      "link": "https://campus.hellorubric.com/?eid=83061",
+      "price": "Free"
+    },
+    {
+      "id": 78953,
+      "name": "UNSWMSA Sports Carnival",
+      "date": "2026-09-21T11:00",
+      "dateLabel": "Mon, 21 Sep 2026, 11.00 AM",
+      "location": "The Village Green",
+      "image": "https://portal.hellorubric.com/assets/img/patterns/pattern_6.png",
+      "link": "https://campus.hellorubric.com/?eid=78953",
+      "price": "Free"
+    },
+    {
+      "id": 79748,
+      "name": "Brothers' Weekly Halaqah",
+      "date": "2026-09-16T15:00",
+      "dateLabel": "Wed, 16 Sep 2026, 3.00 PM",
+      "location": "Biological Sciences Building North (D26)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/4c7dad2a-450a-4a98-9861-99af397b3010.png",
+      "link": "https://campus.hellorubric.com/?eid=79748",
+      "price": "Free"
+    },
+    {
+      "id": 73710,
+      "name": "Sisters' Charity Grand Ball",
+      "date": "2026-09-11T11:00",
+      "dateLabel": "Fri, 11 Sep 2026, 11.00 AM",
+      "location": "The Connection",
+      "image": "https://resources.hellorubric.com/uploaded_assets/b0eb5fda-9797-465a-a84a-12e67340794c.png",
+      "link": "https://campus.hellorubric.com/?eid=73710",
+      "price": "$35.00 - $42.99"
+    },
+    {
+      "id": 73709,
+      "name": "Brothers' Beach Day",
+      "date": "2026-09-04T14:00",
+      "dateLabel": "Fri, 4 Sep 2026, 2.00 PM",
+      "location": "Yarra Bay Beach",
+      "image": "https://resources.hellorubric.com/uploaded_assets/00ae33da-eab3-4a1d-b413-de9ea0b1be53.png",
+      "link": "https://campus.hellorubric.com/?eid=73709",
+      "price": "$7.00"
+    },
+    {
+      "id": 69032,
+      "name": "Sisters' Games Day",
+      "date": "2026-07-31T11:00",
+      "dateLabel": "Fri, 31 Jul 2026, 11.00 AM",
+      "location": "Vallentine Annexe (H22)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/79255888-88d3-42f3-8088-045cc47ad0f5.png",
+      "link": "https://campus.hellorubric.com/?eid=69032",
+      "price": "Free"
+    },
+    {
+      "id": 70918,
+      "name": "Brothers' Weekly Halaqah",
+      "date": "2026-07-30T14:00",
+      "dateLabel": "Thu, 30 Jul 2026, 2.00 PM",
+      "location": "Electrical Engineering Building (G17)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/c6ec7933-9a1d-4f2f-92cf-4356e35235b6.png",
+      "link": "https://campus.hellorubric.com/?eid=70918",
+      "price": "Free"
+    },
+    {
+      "id": 70764,
+      "name": "Sisters' Weekly Halaqah",
+      "date": "2026-07-27T12:00",
+      "dateLabel": "Mon, 27 Jul 2026, 12.00 PM",
+      "location": "Mathews Building (F23)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/d6f46f6e-02c1-496b-802b-c1126407ce42.png",
+      "link": "https://campus.hellorubric.com/?eid=70764",
+      "price": "Free"
+    },
+    {
+      "id": 70360,
+      "name": "Brothers' Weekly Halaqah",
+      "date": "2026-07-23T14:00",
+      "dateLabel": "Thu, 23 Jul 2026, 2.00 PM",
+      "location": "Electrical Engineering Building (G17)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/c6ec7933-9a1d-4f2f-92cf-4356e35235b6.png",
+      "link": "https://campus.hellorubric.com/?eid=70360",
+      "price": "Free"
+    },
+    {
+      "id": 69119,
+      "name": "What Does True Happiness Really Look Like?",
+      "date": "2026-07-22T15:00",
+      "dateLabel": "Wed, 22 Jul 2026, 3.00 PM",
+      "location": "Mathews Building (F23)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/c005a256-4bfa-4df5-b934-b1826fb8ea95.png",
+      "link": "https://campus.hellorubric.com/?eid=69119",
+      "price": "Free"
+    },
+    {
+      "id": 69947,
+      "name": "Sisters' Weekly Halaqah",
+      "date": "2026-07-20T12:00",
+      "dateLabel": "Mon, 20 Jul 2026, 12.00 PM",
+      "location": "Mathews Building (F23)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/d6f46f6e-02c1-496b-802b-c1126407ce42.png",
+      "link": "https://campus.hellorubric.com/?eid=69947",
+      "price": "Free"
+    },
+    {
+      "id": 68260,
+      "name": "Brothers' Games Day",
+      "date": "2026-07-17T15:00",
+      "dateLabel": "Fri, 17 Jul 2026, 3.00 PM",
+      "location": "Mathews Building (F23)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/453c019f-8450-483a-86f8-7d4a5db41742.png",
+      "link": "https://campus.hellorubric.com/?eid=68260",
+      "price": "Free"
+    },
+    {
+      "id": 69249,
+      "name": "Brothers' Weekly Halaqah",
+      "date": "2026-07-14T14:00",
+      "dateLabel": "Tue, 14 Jul 2026, 2.00 PM",
+      "location": "Electrical Engineering Building (G17)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/c6ec7933-9a1d-4f2f-92cf-4356e35235b6.png",
+      "link": "https://campus.hellorubric.com/?eid=69249",
+      "price": "Free"
+    },
+    {
+      "id": 69137,
+      "name": "Sisters' Weekly Halaqah",
+      "date": "2026-07-13T12:00",
+      "dateLabel": "Mon, 13 Jul 2026, 12.00 PM",
+      "location": "Mathews Building (F23)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/d6f46f6e-02c1-496b-802b-c1126407ce42.png",
+      "link": "https://campus.hellorubric.com/?eid=69137",
+      "price": "Free"
+    },
+    {
+      "id": 68008,
+      "name": "Does Islam Oppress Women (PT 2)",
+      "date": "2026-07-02T14:00",
+      "dateLabel": "Thu, 2 Jul 2026, 2.00 PM",
+      "location": "UNSW Sydney",
+      "image": "https://resources.hellorubric.com/uploaded_assets/592a0e75-673a-42e8-9df0-ae554b0fa4e9.png",
+      "link": "https://campus.hellorubric.com/?eid=68008",
+      "price": "Free"
+    },
+    {
+      "id": 67116,
+      "name": "No One Escapes Judgement",
+      "date": "2026-06-25T10:00",
+      "dateLabel": "Thu, 25 Jun 2026, 10.00 AM",
+      "location": "UNSW Sydney",
+      "image": "https://resources.hellorubric.com/uploaded_assets/ab37ff13-9eaf-4cb9-b63d-e1614d7ac2af.png",
+      "link": "https://campus.hellorubric.com/?eid=67116",
+      "price": "Free"
+    },
+    {
+      "id": 66896,
+      "name": "You're Part of The Problem",
+      "date": "2026-06-24T10:00",
+      "dateLabel": "Wed, 24 Jun 2026, 10.00 AM",
+      "location": "The Village Green",
+      "image": "https://resources.hellorubric.com/uploaded_assets/ddab2c8c-88b6-4ba7-80cc-a9e07a48e5bd.png",
+      "link": "https://campus.hellorubric.com/?eid=66896",
+      "price": "Free"
+    },
+    {
+      "id": 66821,
+      "name": "Film Screening - the voice of Hind Rajab",
+      "date": "2026-06-23T17:00",
+      "dateLabel": "Tue, 23 Jun 2026, 5.00 PM",
+      "location": "UNSW Faculty of Law and Justice",
+      "image": "https://resources.hellorubric.com/uploaded_assets/26ea6e82-9dbb-4444-8b1c-b3bf86af1e10.png",
+      "link": "https://campus.hellorubric.com/?eid=66821",
+      "price": "Free"
+    },
+    {
+      "id": 66820,
+      "name": "Why do bad things happen to good people?",
+      "date": "2026-06-22T10:00",
+      "dateLabel": "Mon, 22 Jun 2026, 10.00 AM",
+      "location": "The Village Green",
+      "image": "https://resources.hellorubric.com/uploaded_assets/e12650a0-df8f-46e6-8ca1-f0972d308f95.png",
+      "link": "https://campus.hellorubric.com/?eid=66820",
+      "price": "Free"
+    },
+    {
+      "id": 66897,
+      "name": "Brothers' Weekly Halaqah",
+      "date": "2026-06-18T14:00",
+      "dateLabel": "Thu, 18 Jun 2026, 2.00 PM",
+      "location": "Electrical Engineering Building (G17)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/c6ec7933-9a1d-4f2f-92cf-4356e35235b6.png",
+      "link": "https://campus.hellorubric.com/?eid=66897",
+      "price": "Free"
+    },
+    {
+      "id": 65779,
+      "name": "Does Islam Oppress Women?",
+      "date": "2026-06-18T14:00",
+      "dateLabel": "Thu, 18 Jun 2026, 2.00 PM",
+      "location": "Anita B. Lawrence Centre (H13)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/8ef827db-6e0a-412e-b51c-e8de4197585d.png",
+      "link": "https://campus.hellorubric.com/?eid=65779",
+      "price": "Free"
+    },
+    {
+      "id": 66871,
+      "name": "Sisters' Weekly Halaqah",
+      "date": "2026-06-15T12:00",
+      "dateLabel": "Mon, 15 Jun 2026, 12.00 PM",
+      "location": "Mathews Building (F23)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/d6f46f6e-02c1-496b-802b-c1126407ce42.png",
+      "link": "https://campus.hellorubric.com/?eid=66871",
+      "price": "Free"
+    },
+    {
+      "id": 66651,
+      "name": "Brothers Futsal Competition",
+      "date": "2026-06-15T09:30",
+      "dateLabel": "Mon, 15 Jun 2026, 9.30 AM",
+      "location": "The Village Green",
+      "image": "https://resources.hellorubric.com/uploaded_assets/f1ec0338-fef7-46cb-b173-d7ecab826ddb.png",
+      "link": "https://campus.hellorubric.com/?eid=66651",
+      "price": "Free"
+    },
+    {
+      "id": 66346,
+      "name": "Brothers' Weekly Halaqah",
+      "date": "2026-06-11T14:00",
+      "dateLabel": "Thu, 11 Jun 2026, 2.00 PM",
+      "location": "Electrical Engineering Building (G17)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/c6ec7933-9a1d-4f2f-92cf-4356e35235b6.png",
+      "link": "https://campus.hellorubric.com/?eid=66346",
+      "price": "Free"
+    },
+    {
+      "id": 64576,
+      "name": "Sisters' Bloom & Brunch",
+      "date": "2026-06-05T12:00",
+      "dateLabel": "Fri, 5 Jun 2026, 12.00 PM",
+      "location": "UNSW Sydney",
+      "image": "https://resources.hellorubric.com/uploaded_assets/eb4a8051-6bbf-4f66-a058-67bbee35dcd9.png",
+      "link": "https://campus.hellorubric.com/?eid=64576",
+      "price": "Free"
+    },
+    {
+      "id": 65085,
+      "name": "Tafseer Surah Al-Mulk",
+      "date": "2026-06-04T17:00",
+      "dateLabel": "Thu, 4 Jun 2026, 5.00 PM",
+      "location": "Biological Sciences Building North (D26)",
+      "image": "https://portal.hellorubric.com/assets/img/patterns/pattern_16.png",
+      "link": "https://campus.hellorubric.com/?eid=65085",
+      "price": "Free"
+    },
+    {
+      "id": 65079,
+      "name": "Brothers' Weekly Halaqah",
+      "date": "2026-06-04T14:00",
+      "dateLabel": "Thu, 4 Jun 2026, 2.00 PM",
+      "location": "Electrical Engineering Building (G17)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/c6ec7933-9a1d-4f2f-92cf-4356e35235b6.png",
+      "link": "https://campus.hellorubric.com/?eid=65079",
+      "price": "Free"
+    },
+    {
+      "id": 61729,
+      "name": "Sisters’ Horse Riding & Archery",
+      "date": "2026-05-22T11:00",
+      "dateLabel": "Fri, 22 May 2026, 11.00 AM",
+      "location": "Yathrib's Horse Riding School",
+      "image": "https://resources.hellorubric.com/uploaded_assets/3c95ad7a-afec-46bd-ba8f-e4e7792f94c1.png",
+      "link": "https://campus.hellorubric.com/?eid=61729",
+      "price": "$50.00 - $70.00"
+    },
+    {
+      "id": 60497,
+      "name": "UNSWMSA Brothers' Camp - Striving For Ihsaan",
+      "date": "2026-05-15T15:00",
+      "dateLabel": "Fri, 15 May 2026, 3.00 PM",
+      "location": "Point Wolstoncroft Sport and Recreation Centre",
+      "image": "https://resources.hellorubric.com/uploaded_assets/cb6d97f8-2ced-4db6-9663-1e5bc44625d8.png",
+      "link": "https://campus.hellorubric.com/?eid=60497",
+      "price": "$0.00 - $225.00"
+    },
+    {
+      "id": 61746,
+      "name": "Sisters' Weekly Halaqah",
+      "date": "2026-04-21T12:00",
+      "dateLabel": "Tue, 21 Apr 2026, 12.00 PM",
+      "location": "School of Biotechnology and Biomolecular Sciences",
+      "image": "https://resources.hellorubric.com/uploaded_assets/c5a72a6d-1798-4375-8f5f-adebbe674ebf.png",
+      "link": "https://campus.hellorubric.com/?eid=61746",
+      "price": "Free"
+    },
+    {
+      "id": 59967,
+      "name": "Intro To Dawah",
+      "date": "2026-04-18T09:45",
+      "dateLabel": "Sat, 18 Apr 2026, 9.45 AM",
+      "location": "568 Hume Hwy",
+      "image": "https://resources.hellorubric.com/uploaded_assets/86d4b261-9423-4375-bd28-3c1d1e19584b.png",
+      "link": "https://campus.hellorubric.com/?eid=59967",
+      "price": "Free"
+    },
+    {
+      "id": 60760,
+      "name": "What Will People Think? (Week 9 Lecture)",
+      "date": "2026-04-15T14:00",
+      "dateLabel": "Wed, 15 Apr 2026, 2.00 PM",
+      "location": "UNSW Law Library",
+      "image": "https://resources.hellorubric.com/uploaded_assets/dd93ef8d-8d05-492c-9748-792df4b02ebb.png",
+      "link": "https://campus.hellorubric.com/?eid=60760",
+      "price": "Free"
+    },
+    {
+      "id": 61064,
+      "name": "Sisters' Weekly Halaqah",
+      "date": "2026-04-14T12:00",
+      "dateLabel": "Tue, 14 Apr 2026, 12.00 PM",
+      "location": "School of Biotechnology and Biomolecular Sciences",
+      "image": "https://resources.hellorubric.com/uploaded_assets/c5a72a6d-1798-4375-8f5f-adebbe674ebf.png",
+      "link": "https://campus.hellorubric.com/?eid=61064",
+      "price": "Free"
+    },
+    {
+      "id": 59705,
+      "name": "The Prophetic Way of Justice",
+      "date": "2026-04-10T17:00",
+      "dateLabel": "Fri, 10 Apr 2026, 5.00 PM",
+      "location": "UNSW Sydney",
+      "image": "https://resources.hellorubric.com/uploaded_assets/dd288511-e626-45db-9b37-377ebedcfa72.png",
+      "link": "https://campus.hellorubric.com/?eid=59705",
+      "price": "Free"
+    },
+    {
+      "id": 60413,
+      "name": "Brothers' Weekly Halaqah",
+      "date": "2026-04-08T14:00",
+      "dateLabel": "Wed, 8 Apr 2026, 2.00 PM",
+      "location": "School of Biotechnology and Biomolecular Sciences",
+      "image": "https://resources.hellorubric.com/uploaded_assets/2a060de3-2b1a-4549-b8db-96c7a5da9509.png",
+      "link": "https://campus.hellorubric.com/?eid=60413",
+      "price": "Free"
+    },
+    {
+      "id": 60415,
+      "name": "Sisters' Weekly Halaqah",
+      "date": "2026-04-07T12:00",
+      "dateLabel": "Tue, 7 Apr 2026, 12.00 PM",
+      "location": "School of Biotechnology and Biomolecular Sciences",
+      "image": "https://resources.hellorubric.com/uploaded_assets/c5a72a6d-1798-4375-8f5f-adebbe674ebf.png",
+      "link": "https://campus.hellorubric.com/?eid=60415",
+      "price": "Free"
+    },
+    {
+      "id": 60074,
+      "name": "Meat and Greet",
+      "date": "2026-04-02T11:00",
+      "dateLabel": "Thu, 2 Apr 2026, 11.00 AM",
+      "location": "The Village Green",
+      "image": "https://resources.hellorubric.com/uploaded_assets/5cdc2b50-6a39-4653-96db-a41c8c236d33.png",
+      "link": "https://campus.hellorubric.com/?eid=60074",
+      "price": "Free"
+    },
+    {
+      "id": 59223,
+      "name": "Brothers' Weekly Halaqah",
+      "date": "2026-04-01T14:00",
+      "dateLabel": "Wed, 1 Apr 2026, 2.00 PM",
+      "location": "School of Biotechnology and Biomolecular Sciences",
+      "image": "https://resources.hellorubric.com/uploaded_assets/2a060de3-2b1a-4549-b8db-96c7a5da9509.png",
+      "link": "https://campus.hellorubric.com/?eid=59223",
+      "price": "Free"
+    },
+    {
+      "id": 59904,
+      "name": "Sisters Weekly Halaqa",
+      "date": "2026-03-31T12:00",
+      "dateLabel": "Tue, 31 Mar 2026, 12.00 PM",
+      "location": "UNSW Sydney",
+      "image": "https://resources.hellorubric.com/uploaded_assets/569a24c7-4dee-4a8a-9513-e02a7bfc8441.png",
+      "link": "https://campus.hellorubric.com/?eid=59904",
+      "price": "Free"
+    },
+    {
+      "id": 53001,
+      "name": "UNSWMSA Grand Iftar 2026",
+      "date": "2026-03-06T18:15",
+      "dateLabel": "Fri, 6 Mar 2026, 6.15 PM",
+      "location": "UNSW Sydney",
+      "image": "https://resources.hellorubric.com/uploaded_assets/e8df6d13-ff9e-45df-86a5-ab56e194b608.png",
+      "link": "https://campus.hellorubric.com/?eid=53001",
+      "price": "$6.52 - $25.00"
+    },
+    {
+      "id": 43734,
+      "name": "Palestine: The Untold Narrative",
+      "date": "2025-10-31T16:30",
+      "dateLabel": "Fri, 31 Oct 2025, 4.30 PM",
+      "location": "UNSW Sydney",
+      "image": "https://resources.hellorubric.com/uploaded_assets/83c5dd73-153b-4963-87d2-607fe2d0416f.png",
+      "link": "https://campus.hellorubric.com/?eid=43734",
+      "price": "Free"
+    },
+    {
+      "id": 44501,
+      "name": "Inter-society Debate: Was Jesus Muslim?",
+      "date": "2025-10-30T18:00",
+      "dateLabel": "Thu, 30 Oct 2025, 6.00 PM",
+      "location": "Ainsworth Building (J17)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/868afb05-f7d0-4acb-9a1f-f76b96ae71b3.png",
+      "link": "https://campus.hellorubric.com/?eid=44501",
+      "price": "Free"
+    },
+    {
+      "id": 43706,
+      "name": "Common Contentions",
+      "date": "2025-10-17T15:00",
+      "dateLabel": "Fri, 17 Oct 2025, 3.00 PM",
+      "location": "Mathews Building (F23)",
+      "image": "https://resources.hellorubric.com/uploaded_assets/af71e8ed-5b7a-4ccd-ad28-4a4bcbfb6176.jpg",
+      "link": "https://campus.hellorubric.com/?eid=43706",
+      "price": "Free"
+    },
+    {
+      "id": 43349,
+      "name": "DAY 4 MRW: Open Air Khutbah & Identity Talk",
+      "date": "2025-10-10T13:00",
+      "dateLabel": "Fri, 10 Oct 2025, 1.00 PM",
+      "location": "UNSW Sydney",
+      "image": "https://portal.hellorubric.com/assets/img/patterns/pattern_6.png",
+      "link": "https://campus.hellorubric.com/?eid=43349",
+      "price": "Free"
+    },
+    {
+      "id": 43277,
+      "name": "DAY 3 MRW: Beyond the Self",
+      "date": "2025-10-09T17:00",
+      "dateLabel": "Thu, 9 Oct 2025, 5.00 PM",
+      "location": "UNSW Sydney",
+      "image": "https://portal.hellorubric.com/assets/img/patterns/pattern_6.png",
+      "link": "https://campus.hellorubric.com/?eid=43277",
+      "price": "Free"
+    },
+    {
+      "id": 43261,
+      "name": "MRW DAY 2: The Foundations of Seeking Knowledge",
+      "date": "2025-10-08T14:00",
+      "dateLabel": "Wed, 8 Oct 2025, 2.00 PM",
+      "location": "UNSW Law Library",
+      "image": "https://portal.hellorubric.com/assets/img/patterns/pattern_8.png",
+      "link": "https://campus.hellorubric.com/?eid=43261",
+      "price": "Free"
+    },
+    {
+      "id": 42992,
+      "name": "Day 1 MRW - Surviving in the Modern World",
+      "date": "2025-10-07T15:00",
+      "dateLabel": "Tue, 7 Oct 2025, 3.00 PM",
+      "location": "UNSW Law Library",
+      "image": "https://resources.hellorubric.com/uploaded_assets/2545e798-8083-4305-a443-66f9da572686.jpg",
+      "link": "https://campus.hellorubric.com/?eid=42992",
+      "price": "Free"
+    },
+    {
+      "id": 41212,
+      "name": "Welcome BBQ",
+      "date": "2025-09-16T12:11",
+      "dateLabel": "Tue, 16 Sep 2025, 12.11 PM",
+      "location": "The Village Green",
+      "image": "https://portal.hellorubric.com/assets/img/patterns/pattern_11.png",
+      "link": "https://campus.hellorubric.com/?eid=41212",
+      "price": "Free"
+    },
+    {
+      "id": 38802,
+      "name": "Sisters' Holiday Self Defence",
+      "date": "2025-09-03T14:00",
+      "dateLabel": "Wed, 3 Sep 2025, 2.00 PM",
+      "location": "Volkz Jiujitsu Academy",
+      "image": "https://resources.hellorubric.com/uploaded_assets/9d6db2c4-ec64-4844-917b-7fab444d2e82.png",
+      "link": "https://campus.hellorubric.com/?eid=38802",
+      "price": "$16.81"
+    },
+    {
+      "id": 38766,
+      "name": "Brothers' Holiday Wrestling",
+      "date": "2025-08-31T14:00",
+      "dateLabel": "Sun, 31 Aug 2025, 2.00 PM",
+      "location": "Volkz Jiujitsu Academy",
+      "image": "https://resources.hellorubric.com/uploaded_assets/1de81e24-41ad-4787-af41-67c865f199d1.png",
+      "link": "https://campus.hellorubric.com/?eid=38766",
+      "price": "$16.81"
+    }
+  ]
+}
