@@ -18,3 +18,12 @@ export const sponsors = [
     link: "https://thetaxfactor.com.au/"
   }
 ];
+
+export const benefits = [
+  "Targeted Engagement with a High-Potential Muslim Professional Community",
+  "Opportunities to Educate, Mentor, and Build Long-Term Relationships",
+  "Sustained Brand Presence Across Flagship Initiatives",
+  "Consistent Digital Promotion and Recognition",
+  "Community Impact, Ongoing Sadaqah & Barakah",
+  "A fast-growing community"
+]

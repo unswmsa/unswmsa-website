@@ -50,7 +50,7 @@ function About() {
         </div>
       </RevealSection>
 
-      <RevealSection>
+      <RevealSection sectionName="jummuah-timings">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <h2 className="text-3xl font-bold mb-2">Jumm'uah Timings</h2>
           <hr className="border-t-2 mb-8" style={{ borderColor: TERRACOTTA }} />
