@@ -38,7 +38,7 @@ export const extShuraTeams = [
   { team: 'MNC', icon: 'ph:megaphone-fill', members: ['Hajara', 'Mariama', 'Noor', 'Aimen', 'Amina', 'Zobiya', 'Amira', 'Rosanna', 'Brix'] },
   { team: 'Events', icon: 'ph:calendar-star-fill', members: ['Tasneem', 'Nousha', 'Shazana', 'Nisa', 'Salih', 'Khalid', 'Tahir'] },
   { team: 'Dawah', icon: 'ph:mosque-fill', members: ['Dua', 'Sara', 'Haneya', 'Rustom', 'Suhail', 'Omar'] },
-  { team: 'Sponsorships', icon: 'ph:handshake-fill', members: ['Zahra', 'Fariza', 'Bara'] },
+  { team: 'Sponsorships', icon: 'ph:handshake-fill', members: ['Zahra', 'Fariza', 'Bara','Azaan'] },
   { team: 'Advocacy', icon: 'ph:megaphone-simple-fill', members: ['Aamina', 'Nadia', 'Mahmoud', 'Anhaar', 'Ahmed', 'Saavan'] },
   { team: 'Website', icon: 'ph:code-fill', members: ['Noor Babar (Lead)', 'Mahir Bhuiyan (Lead)', 'Ihsan Ahmad', 'Yumna Zaheed', 'Hajara Musthafa'] },
   { team: 'Education', icon: 'ph:book-open-text-fill', members: ['Hiba (lead)'] },
