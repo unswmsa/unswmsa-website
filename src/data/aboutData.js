@@ -16,7 +16,7 @@ import advocacy1 from '../assets/about/advocacy1.png';
 import advocacy2 from '../assets/about/advocacy2.png';
 
 export const shuraMembers = [
-  { name: 'Zakariya Yoga', role: 'President', icon: 'mdi:chess-king', photo: president, accent: 'king', favourite: 'Surah Al Fajr' },
+  { name: 'Zakariya Yoga', role: 'President', icon: 'mdi:chess-queen', photo: president, accent: 'king', favourite: 'Surah Al Fajr' },
   { name: 'Ayishah Ahmad', role: 'Vice President', icon: 'mdi:chess-queen', photo: vicePresident, accent: 'queen', favourite: 'Say [Oh Prophet, that Allah says], “Oh my servants who have transgressed against themselves [by sinning], do not lose hope in Allah’s mercy. Indeed, Allah forgives all sins. He is indeed the All-Forgiving, the Most Merciful. (Surah Zumar:53)”'},
   { name: 'Khansa Pathan', role: 'MNC Lead', icon: 'ph:megaphone-fill', photo: mnc1, favourite: 'Surah Al-A’raf' },
   { name: 'Mahir Bhuiyan', role: 'MNC Lead', icon: 'ph:megaphone-fill', photo: mnc2, favourite: 'Surah Al-Kahf' },
