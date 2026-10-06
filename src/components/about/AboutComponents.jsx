@@ -70,7 +70,6 @@ export const TeamCard = ({ member }) => {
               <Icon icon="ph:image" className="w-16 h-16 text-white/60" />
             )}
           </div>
-
           
           <div className="bg-[#EAE6DB] m-3 rounded-xl p-4 flex items-center gap-3" style={{ background: ring && 'linear-gradient(135deg, #fbe9e4, #EAE6DB)', boxShadow: ring && `inset 0 0 0 1px ${ring}` }}>
             <Icon icon={member.icon} className="w-6 h-6 shrink-0" style={{ color: TERRACOTTA }} />
