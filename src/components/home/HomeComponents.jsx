@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export const TERRACOTTA = '#A74A38';
 export const CREAM = '#EAE6DB';
@@ -31,16 +32,24 @@ export const TypingTagline = () => {
   );
 };
 
-export const OutlineButton = ({ children, href, external }) => (
-  <a  
-    href={href}
-    target={external ? '_blank' : undefined}
-    rel={external ? 'noopener noreferrer' : undefined}
-    className="px-4 py-1 rounded border bg-[#EAE6DB] text-msa-black border-[#A74A38] hover:bg-[#A74A38] hover:text-white transition-colors"
-  >
-    {children}
-  </a>
-);
+export const OutlineButton = ({ children, href, external }) => {
+  const className =
+    'px-4 py-1 rounded border bg-[#EAE6DB] text-msa-black border-[#A74A38] hover:bg-[#A74A38] hover:text-white transition-colors';
+
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link to={href} className={className}>
+      {children}
+    </Link>
+  );
+};
 
 export const FeatureCard = ({ card }) => (
   <div className="rounded-2xl overflow-hidden shadow-lg bg-msa-black">
@@ -56,9 +65,9 @@ export const FeatureCard = ({ card }) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
-      <a href={card.to} className="text-sm underline hover:text-white/80 transition-colors">
+      <Link to={card.to} className="text-sm underline hover:text-white/80 transition-colors">
         {card.linkText} →
-      </a>
+      </Link>
     </div>
   </div>
 );

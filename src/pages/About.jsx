@@ -1,4 +1,5 @@
 import logo from '../assets/shared/logo.png';
+import { Link } from 'react-router-dom';
 import { shuraMembers, extShuraTeams, services } from '../data/aboutData';
 import {
   TERRACOTTA,
@@ -83,20 +84,20 @@ function About() {
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center text-center max-w-2xl mx-auto">
-            <a
-              href="/events"
+            <Link
+              to="/events"
               className="flex-1 rounded-xl p-4 border-2 bg-white/60 text-[#A74A38] border-[#A74A38] hover:bg-[#A74A38] hover:text-white transition-colors"
             >
               <p className="font-bold">See Upcoming Events →</p>
               <p className="text-sm">Check the Events page for what's on</p>
-            </a>
-            <a
-              href="/resources"
+            </Link>
+            <Link
+              to="/resources"
               className="flex-1 rounded-xl p-4 border-2 bg-white/60 text-[#A74A38] border-[#A74A38] hover:bg-[#A74A38] hover:text-white transition-colors"
             >
               <p className="font-bold">Browse Resources →</p>
               <p className="text-sm">Event recaps and guides for first years</p>
-            </a>
+            </Link>
           </div>
         </div>
       </RevealSection>

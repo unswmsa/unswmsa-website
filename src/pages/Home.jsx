@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import gradient from '../assets/shared/gradient.png';
 import logo from '../assets/shared/logo.png';
@@ -162,12 +163,12 @@ function Home() {
             className="h-28 object-contain hover:scale-105 transition-transform duration-300"
           />
         </div>
-        <a
-          href="/sponsors"
+        <Link
+          to="/sponsors"
           className="inline-block text-white text-sm font-bold px-5 py-2 rounded-full hover:opacity-85 transition-opacity"
           style={{ backgroundColor: TERRACOTTA }}
         > LEARN MORE
-        </a>
+        </Link>
         <hr className="border-gray-400 mt-8" />
       </div>
 
