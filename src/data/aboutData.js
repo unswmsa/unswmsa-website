@@ -16,8 +16,8 @@ import advocacy1 from '../assets/about/advocacy1.png';
 import advocacy2 from '../assets/about/advocacy2.png';
 
 export const shuraMembers = [
-  { name: 'Zakariya Yoga', role: 'President', icon: 'ph:star-fill', photo: president, favourite: 'Surah Al Fajr' },
-  { name: 'Ayishah Ahmad', role: 'Vice President', icon: 'ph:star-half-fill', photo: vicePresident, favourite: 'Say [Oh Prophet, that Allah says], “Oh my servants who have transgressed against themselves [by sinning], do not lose hope in Allah’s mercy. Indeed, Allah forgives all sins. He is indeed the All-Forgiving, the Most Merciful. (Surah Zumar:53)' },
+  { name: 'Zakariya Yoga', role: 'President', icon: 'mdi:chess-queen', photo: president, accent: 'king', favourite: 'Surah Al Fajr' },
+  { name: 'Ayishah Ahmad', role: 'Vice President', icon: 'mdi:chess-queen', photo: vicePresident, accent: 'queen', favourite: 'Say [Oh Prophet, that Allah says], “Oh my servants who have transgressed against themselves [by sinning], do not lose hope in Allah’s mercy. Indeed, Allah forgives all sins. He is indeed the All-Forgiving, the Most Merciful. (Surah Zumar:53)”'},
   { name: 'Khansa Pathan', role: 'MNC Lead', icon: 'ph:megaphone-fill', photo: mnc1, favourite: 'Surah Al-A’raf' },
   { name: 'Mahir Bhuiyan', role: 'MNC Lead', icon: 'ph:megaphone-fill', photo: mnc2, favourite: 'Surah Al-Kahf' },
   { name: 'Ryan Khan', role: 'MNC Lead', icon: 'ph:megaphone-fill', photo: mnc3, favourite: '"No thought, moment or step of yours escapes His regard, nor any of your moments of stillness or movement" - Imam Al-Ghazali' },
@@ -38,7 +38,7 @@ export const extShuraTeams = [
   { team: 'MNC', icon: 'ph:megaphone-fill', members: ['Hajara', 'Mariama', 'Noor', 'Aimen', 'Amina', 'Zobiya', 'Amira', 'Rosanna', 'Brix'] },
   { team: 'Events', icon: 'ph:calendar-star-fill', members: ['Tasneem', 'Nousha', 'Shazana', 'Nisa', 'Salih', 'Khalid', 'Tahir'] },
   { team: 'Dawah', icon: 'ph:mosque-fill', members: ['Dua', 'Sara', 'Haneya', 'Rustom', 'Suhail', 'Omar'] },
-  { team: 'Sponsorships', icon: 'ph:handshake-fill', members: ['Zahra', 'Fariza', 'Bara'] },
+  { team: 'Sponsorships', icon: 'ph:handshake-fill', members: ['Zahra', 'Fariza', 'Bara','Azaan'] },
   { team: 'Advocacy', icon: 'ph:megaphone-simple-fill', members: ['Aamina', 'Nadia', 'Mahmoud', 'Anhaar', 'Ahmed', 'Saavan'] },
   { team: 'Website', icon: 'ph:code-fill', members: ['Noor Babar (Lead)', 'Mahir Bhuiyan (Lead)', 'Ihsan Ahmad', 'Yumna Zaheed', 'Hajara Musthafa'] },
   { team: 'Education', icon: 'ph:book-open-text-fill', members: ['Hiba (lead)'] },

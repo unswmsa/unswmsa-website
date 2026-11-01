@@ -22,6 +22,7 @@ const useIsMobile = () => {
 
 export const TeamCard = ({ member }) => {
   const [flipped, setFlipped] = useState(false);
+  const ring = { king:'#ebd6b3', queen: '#e9b9d5'}[member.accent];
 
   const toggleFlip = () => setFlipped((f) => !f);
   const handleKeyDown = (e) => {
@@ -51,12 +52,12 @@ export const TeamCard = ({ member }) => {
         {/* the front of the card before its flipped */}
         <div
           className="absolute inset-0 rounded-2xl overflow-hidden flex flex-col justify-end"
-          style={{ backfaceVisibility: 'hidden', backgroundColor: '#6b6b6b' }}
+          style={{ backfaceVisibility: 'hidden', backgroundColor: '#6b6b6b', border: ring && `3px solid ${ring}`, boxShadow: ring && `0 0 16px ${ring}, 0 0 36px ${ring}66` }}
         >
           <div className="absolute top-3 right-3 bg-black/40 rounded-full p-2 z-10">
             <Icon icon="ph:arrows-clockwise-bold" className="w-4 h-4 text-white" />
           </div>
-
+          {member.accent === 'queen' && ['top-3 left-4 text-xl', 'top-10 left-10 text-sm', 'top-4 left-16 text-xs'].map((c, i) => <span key={i} className={`absolute ${c} z-10 animate-pulse`} style={{ color: '#fff4ef', textShadow: `0 0 8px ${ring}`, animationDelay: `${i * 0.5}s` }}>✦</span>)}
           <div className="flex-1 flex items-center justify-center overflow-hidden">
             {member.photo ? (
               <img
@@ -69,7 +70,8 @@ export const TeamCard = ({ member }) => {
               <Icon icon="ph:image" className="w-16 h-16 text-white/60" />
             )}
           </div>
-          <div className="bg-[#EAE6DB] m-3 rounded-xl p-4 flex items-center gap-3">
+          
+          <div className="bg-[#EAE6DB] m-3 rounded-xl p-4 flex items-center gap-3" style={{ background: ring && 'linear-gradient(135deg, #fbe9e4, #EAE6DB)', boxShadow: ring && `inset 0 0 0 1px ${ring}` }}>
             <Icon icon={member.icon} className="w-6 h-6 shrink-0" style={{ color: TERRACOTTA }} />
             <div>
               <p className="font-bold" style={{ color: TERRACOTTA }}>{member.role}</p>
@@ -85,6 +87,8 @@ export const TeamCard = ({ member }) => {
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
             backgroundColor: TERRACOTTA,
+            border: ring && `3px solid ${ring}`,
+            boxShadow: ring && `0 0 16px ${ring}`,
           }}
         >
           <div className="absolute top-3 right-3 bg-black/20 rounded-full p-2">
@@ -139,7 +143,7 @@ export const Carousel = ({ items, cardsPerView, renderItem, keyFn }) => {
       </button>
 
       <div
-        className="overflow-hidden"
+        className="overflow-hidden py-4"
         style={{ width: `${effectiveCardsPerView * CARD_WIDTH + (effectiveCardsPerView - 1) * CARD_GAP}px` }}
       >
         <div
