@@ -6,7 +6,7 @@ export const resources = [
     title: 'Dawah Guide',
     description:
       'A guide to help you give dawah, and increase your knowledge! You can also join us every Wednesday at the dawah stalls',
-    href: 'https://lovely-catmint-be1.notion.site/dawah-resource-hub',
+    comingSoon: true,
   },
   {
     title: 'Halal Food Map',
